@@ -8,9 +8,6 @@ import MaternityHome from "./MaternityHome/MaternityHome";
 import { RouteLink } from "./Utils/models";
 import API from "./Utils/API";
 
-// TEST CALL TO BE DELETED
-API.get("/").then(x => console.log(x));
-
 const App = () => {
   const links: RouteLink[] = [
     { url: "/", title: "home" },
