@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { RouteLink } from "../../models";
+// TODO: check if supports dynamic lang change
+import i18n from "../../../i18n";
+
 interface Props {
   links: RouteLink[];
 }
@@ -15,6 +18,7 @@ class Navigation extends Component<Props> {
     return (
       <nav>
         <ul>{Links}</ul>
+        {i18n.t("hi")}
       </nav>
     );
   }
