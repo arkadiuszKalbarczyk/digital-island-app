@@ -1,16 +1,28 @@
 import React from "react";
+import { Route, Redirect, Switch } from "react-router-dom";
 import "./App.css";
 
 import Navbar from "./Utils/components/Navbar/Navbar";
 import Homepage from "./Homepage/Homepage";
+import MaternityHome from "./MaternityHome/MaternityHome";
+import { RouteLink } from "./Utils/models";
 
 const App = () => {
+  const links: RouteLink[] = [
+    { url: "/", title: "home" },
+    { url: "/maternity", title: "maternity" }
+  ];
+
   return (
     <React.Fragment>
-      <Navbar />
+      <Navbar links={links} />
 
       <main className="App">
-        <Homepage />
+        <Switch>
+          <Route exact path="/" component={Homepage} />
+          <Route exact path="/maternity" component={MaternityHome} />
+          <Route render={() => <Redirect to={{ pathname: "/" }} />} />
+        </Switch>
       </main>
     </React.Fragment>
   );

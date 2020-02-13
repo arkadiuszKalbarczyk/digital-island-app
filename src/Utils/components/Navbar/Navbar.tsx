@@ -1,20 +1,21 @@
 import React, { Component } from "react";
-
-class Navigation extends Component {
+import { Link } from "react-router-dom";
+import { RouteLink } from "../../models";
+interface Props {
+  links: RouteLink[];
+}
+class Navigation extends Component<Props> {
   render() {
+    const Links = this.props.links.map((link, index) => (
+      <li key={index}>
+        <Link to={link.url}>{link.title}</Link>
+      </li>
+    ));
+
     return (
-      <React.Fragment>
-        <nav>
-          <ul>
-            <li>
-              <a>link1</a>
-            </li>
-            <li>
-              <a>link2</a>
-            </li>
-          </ul>
-        </nav>
-      </React.Fragment>
+      <nav>
+        <ul>{Links}</ul>
+      </nav>
     );
   }
 }
