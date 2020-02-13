@@ -1,7 +1,11 @@
 import axios from "axios";
-const url = "temp/url";
+
+const baseURL = process.env.REACT_APP_BASE_URL;
+if (!baseURL) {
+  console.warn("env var missing!");
+}
 
 export default axios.create({
-  baseURL: url,
+  baseURL,
   responseType: "json"
 });
