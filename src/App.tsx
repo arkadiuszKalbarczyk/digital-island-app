@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Redirect, Switch } from "react-router-dom";
 import "./App.css";
 
 import Navbar from "./Utils/components/Navbar/Navbar";
@@ -21,6 +21,7 @@ const App = () => {
         <Switch>
           <Route exact path="/" component={Homepage} />
           <Route exact path="/maternity" component={MaternityHome} />
+          <Route render={() => <Redirect to={{ pathname: "/" }} />} />
         </Switch>
       </main>
     </React.Fragment>
