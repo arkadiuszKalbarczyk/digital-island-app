@@ -1,10 +1,12 @@
 import React from "react";
 import "./App.css";
 
+import Navbar from "./Utils/components/Navbar/Navbar";
+
 const App = () => {
   return (
     <div className="App">
-      <header className="App-header">React basic setup</header>
+      <Navbar />
     </div>
   );
 };
