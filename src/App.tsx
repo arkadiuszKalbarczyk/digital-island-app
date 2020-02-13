@@ -6,6 +6,7 @@ import Navbar from "./Utils/components/Navbar/Navbar";
 import Homepage from "./Homepage/Homepage";
 import MaternityHome from "./MaternityHome/MaternityHome";
 import { RouteLink } from "./Utils/models";
+import API from "./Utils/API";
 
 const App = () => {
   const links: RouteLink[] = [
