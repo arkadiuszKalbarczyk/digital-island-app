@@ -26,12 +26,14 @@ class Navigation extends Component<Props> {
 
     return (
       <header className="Navbar">
-        <nav>
-          <LanguageSwitch i18n={i18n}></LanguageSwitch>
+        <section className="Navbar-container">
+          <nav>
+            <LanguageSwitch i18n={i18n}></LanguageSwitch>
 
-          <ul>{LinkElements}</ul>
-          {t("hi")}
-        </nav>
+            <ul>{LinkElements}</ul>
+            {t("hi")}
+          </nav>
+        </section>
       </header>
     );
   }
