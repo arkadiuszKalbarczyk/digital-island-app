@@ -19,4 +19,29 @@
   &-coat {
     flex: 1;
   }
+
+  &-mobile {
+    display: none;
+  }
+}
+
+@media screen and (max-width: $tablet-width + 1px) {
+  .Footer {
+    &-container {
+      flex-flow: column;
+    }
+  }
+}
+
+@media screen and (max-width: $mobile-width +1px) {
+  .Footer {
+    &-not-mobile {
+      display: none;
+    }
+
+    &-mobile {
+      display: flex;
+      flex-flow: column;
+    }
+  }
 }

@@ -3,6 +3,7 @@ import "./Footer.scss";
 
 import ColumnSection from "./components/ColumnSection/ColumnSection";
 import ColumnCoatOfArms from "./components/ColumnCoatOfArms/ColumnCoatOfArms";
+import ColumnSectionSlider from "./components/ColumnSectionSlider/ColumnSectionSlider";
 
 interface Props {}
 
@@ -13,12 +14,18 @@ class Footer extends Component<Props> {
         <article className="Footer-container">
           <ColumnCoatOfArms className="Footer-coat" />
 
-          <nav className="Footer-links">
-            <ColumnSection title="title" />
+          <nav className="Footer-links Footer-not-mobile">
+            <ColumnSection title="Public services" />
 
-            <ColumnSection title="title2" />
+            <ColumnSection title="Governments" />
 
-            <ColumnSection title="title3" />
+            <ColumnSection title="Contact" />
+          </nav>
+
+          <nav className="Footer-mobile">
+            <ColumnSectionSlider title="Public services" />
+            <ColumnSectionSlider title="Governments" />
+            <ColumnSectionSlider title="Contact" />
           </nav>
         </article>
       </footer>
