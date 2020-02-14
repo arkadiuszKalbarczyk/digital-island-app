@@ -8,4 +8,5 @@ if (!baseURL) {
 export default axios.create({
   baseURL,
   responseType: "json"
+  // headers: { Authorization: '//' }
 });
