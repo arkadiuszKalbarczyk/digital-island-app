@@ -3,6 +3,7 @@ import { Route, Redirect, Switch } from "react-router-dom";
 import "./App.scss";
 
 import Navbar from "./Utils/components/Navbar/Navbar";
+import Footer from "./Utils/components/Footer/Footer";
 import Homepage from "./Homepage/Homepage";
 import MaternityHome from "./MaternityHome/MaternityHome";
 import { RouteLink } from "./Utils/models";
@@ -27,6 +28,8 @@ const App = () => {
           <Route render={() => <Redirect to={{ pathname: "/" }} />} />
         </Switch>
       </main>
+
+      <Footer />
     </React.Fragment>
   );
 };

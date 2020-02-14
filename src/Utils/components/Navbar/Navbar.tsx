@@ -4,7 +4,7 @@ import { TFunction, i18n } from "i18next";
 
 import LanguageSwitch from "../LanguageSwitch/LanguageSwitch";
 import { RouteLink } from "../../models";
-
+import "./Navbar.scss";
 interface Props {
   links: RouteLink[];
   t: TFunction;
@@ -25,12 +25,14 @@ class Navigation extends Component<Props> {
     const LinkElements = this.getLinkElements();
 
     return (
-      <nav>
-        <LanguageSwitch i18n={i18n}></LanguageSwitch>
+      <header className="Navbar">
+        <nav>
+          <LanguageSwitch i18n={i18n}></LanguageSwitch>
 
-        <ul>{LinkElements}</ul>
-        {t("hi")}
-      </nav>
+          <ul>{LinkElements}</ul>
+          {t("hi")}
+        </nav>
+      </header>
     );
   }
 }

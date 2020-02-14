@@ -1,0 +1,11 @@
+.ColumnSection {
+  color: white;
+
+  &-container {
+    list-style: none;
+  }
+  &-link {
+    color: inherit;
+    text-decoration: inherit;
+  }
+}
