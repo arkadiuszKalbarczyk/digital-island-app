@@ -1,0 +1,48 @@
+@import "../../../assets/variables.scss";
+
+.Footer {
+  height: 575px;
+  background-color: $primary-color;
+  color: white;
+
+  &-container {
+    display: flex;
+    max-width: $desktop-width;
+    margin: 0 auto;
+  }
+
+  &-links {
+    display: flex;
+    flex: 3;
+  }
+
+  &-coat {
+    flex: 1;
+    margin: 0;
+  }
+
+  &-mobile {
+    display: none;
+  }
+}
+
+@media screen and (max-width: $tablet-width + 1px) {
+  .Footer {
+    &-container {
+      flex-flow: column;
+    }
+  }
+}
+
+@media screen and (max-width: $mobile-width +1px) {
+  .Footer {
+    &-not-mobile {
+      display: none;
+    }
+
+    &-mobile {
+      display: flex;
+      flex-flow: column;
+    }
+  }
+}

@@ -1,0 +1,7 @@
+@import "./assets/variables.scss";
+
+.App {
+  color: $primary-color;
+  max-width: $desktop-width;
+  margin: 0 auto;
+}

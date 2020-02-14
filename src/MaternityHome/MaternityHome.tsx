@@ -1,5 +1,5 @@
 import React from "react";
-import "./MaternityHome.css";
+import "./MaternityHome.scss";
 
 const MaternityHome = () => {
   return (
