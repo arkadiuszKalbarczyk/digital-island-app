@@ -5,6 +5,7 @@ import { TFunction, i18n } from "i18next";
 import LanguageSwitch from "../LanguageSwitch/LanguageSwitch";
 import { RouteLink } from "../../models";
 import "./Navbar.scss";
+
 interface Props {
   links: RouteLink[];
   t: TFunction;
