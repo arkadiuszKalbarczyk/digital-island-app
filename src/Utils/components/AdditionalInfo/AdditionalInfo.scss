@@ -1,0 +1,9 @@
+.AdditionalInfo {
+  display: flex;
+
+  &-tile {
+    flex: 1;
+    text-align: center;
+    height: 350px;
+  }
+}
