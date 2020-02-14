@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 
-interface Props {}
+interface Props {
+  className: string;
+}
 
 class ColumnCoatOfArms extends Component<Props> {
   render() {
     return (
-      <figure>
+      <figure className={this.props.className}>
         <p>text</p>
         <p> img </p>
       </figure>

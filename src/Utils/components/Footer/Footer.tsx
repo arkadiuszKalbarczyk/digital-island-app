@@ -10,15 +10,17 @@ class Footer extends Component<Props> {
   render() {
     return (
       <footer className="Footer">
-        <ColumnCoatOfArms />
+        <article className="Footer-container">
+          <ColumnCoatOfArms className="Footer-coat" />
 
-        <nav>
-          <ColumnSection title="title" />
+          <nav className="Footer-links">
+            <ColumnSection title="title" />
 
-          <ColumnSection title="title2" />
+            <ColumnSection title="title2" />
 
-          <ColumnSection title="title3" />
-        </nav>
+            <ColumnSection title="title3" />
+          </nav>
+        </article>
       </footer>
     );
   }

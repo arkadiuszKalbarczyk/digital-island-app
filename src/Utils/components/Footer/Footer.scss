@@ -4,5 +4,19 @@
   height: 575px;
   background-color: $primary-color;
   color: white;
-  display: flex;
+
+  &-container {
+    display: flex;
+    max-width: $desktop-width;
+    margin: 0 auto;
+  }
+
+  &-links {
+    display: flex;
+    flex: 3;
+  }
+
+  &-coat {
+    flex: 1;
+  }
 }

@@ -1,7 +1,10 @@
 .ColumnSection {
+  flex: 1;
+
   &-container {
     list-style: none;
   }
+
   &-link {
     color: inherit;
     text-decoration: inherit;
