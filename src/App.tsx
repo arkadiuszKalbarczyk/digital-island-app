@@ -6,6 +6,7 @@ import Navbar from "./Utils/components/Navbar/Navbar";
 import Homepage from "./Homepage/Homepage";
 import MaternityHome from "./MaternityHome/MaternityHome";
 import { RouteLink } from "./Utils/models";
+import { useTranslation } from "react-i18next";
 
 const App = () => {
   const links: RouteLink[] = [
@@ -13,9 +14,11 @@ const App = () => {
     { url: "/maternity", title: "maternity" }
   ];
 
+  const { t, i18n } = useTranslation();
+
   return (
     <React.Fragment>
-      <Navbar links={links} />
+      <Navbar links={links} t={t} i18n={i18n} />
 
       <main className="App">
         <Switch>

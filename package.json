@@ -6,21 +6,6 @@
     "node": "10.x",
     "npm": "~6.12.0"
   },
-  "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.4.0",
-    "@testing-library/user-event": "^7.2.1",
-    "@types/jest": "^24.9.1",
-    "@types/node": "^12.12.27",
-    "@types/react": "^16.9.19",
-    "@types/react-dom": "^16.9.5",
-    "axios": "^0.19.2",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "react-router-dom": "^5.1.2",
-    "react-scripts": "3.3.1",
-    "typescript": "^3.7.5"
-  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -44,6 +29,23 @@
     ]
   },
   "devDependencies": {
-    "dotenv": "^8.2.0"
+    "dotenv": "^8.2.0",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.4.0",
+    "@testing-library/user-event": "^7.2.1",
+    "@types/jest": "^24.9.1",
+    "@types/node": "^12.12.27",
+    "@types/react": "^16.9.19",
+    "@types/react-dom": "^16.9.5"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "i18next": "^19.1.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-i18next": "^11.3.1",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.3.1",
+    "typescript": "^3.7.5"
   }
 }
