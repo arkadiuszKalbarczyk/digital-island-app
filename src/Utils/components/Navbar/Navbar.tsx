@@ -1,27 +1,34 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { TFunction } from "i18next";
+
 import { RouteLink } from "../../models";
 // TODO: check if supports dynamic lang change
-import i18n from "../../../i18n";
 
 interface Props {
   links: RouteLink[];
+  t: TFunction;
 }
+
 class Navigation extends Component<Props> {
-  render() {
-    const Links = this.props.links.map((link, index) => (
+  getLinkElements() {
+    return this.props.links.map((link, index) => (
       <li key={index}>
         <Link to={link.url}>{link.title}</Link>
       </li>
     ));
+  }
+
+  render() {
+    const t = this.props.t;
+    const Links = this.getLinkElements();
 
     return (
       <nav>
         <ul>{Links}</ul>
-        {i18n.t("hi")}
+        {t("hi")}
       </nav>
     );
   }
 }
-
 export default Navigation;
