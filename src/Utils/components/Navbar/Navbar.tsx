@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { TFunction } from "i18next";
+import { TFunction, i18n } from "i18next";
 
+import LanguageSwitch from "../LanguageSwitch/LanguageSwitch";
 import { RouteLink } from "../../models";
-// TODO: check if supports dynamic lang change
 
 interface Props {
   links: RouteLink[];
   t: TFunction;
+  i18n: i18n;
 }
 
 class Navigation extends Component<Props> {
@@ -20,12 +21,14 @@ class Navigation extends Component<Props> {
   }
 
   render() {
-    const t = this.props.t;
-    const Links = this.getLinkElements();
+    const { t, i18n } = this.props;
+    const LinkElements = this.getLinkElements();
 
     return (
       <nav>
-        <ul>{Links}</ul>
+        <LanguageSwitch i18n={i18n}></LanguageSwitch>
+
+        <ul>{LinkElements}</ul>
         {t("hi")}
       </nav>
     );

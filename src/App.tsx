@@ -14,9 +14,11 @@ const App = () => {
     { url: "/maternity", title: "maternity" }
   ];
 
+  const { t, i18n } = useTranslation();
+
   return (
     <React.Fragment>
-      <Navbar links={links} t={useTranslation().t} />
+      <Navbar links={links} t={t} i18n={i18n} />
 
       <main className="App">
         <Switch>

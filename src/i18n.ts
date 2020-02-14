@@ -3,6 +3,7 @@ import { initReactI18next } from "react-i18next";
 
 import translationEN from "./assets/locales/en/translation.json";
 import translationIS from "./assets/locales/is/translation.json";
+import translationPL from "./assets/locales/pl/translation.json";
 
 const resources = {
   en: {
@@ -10,6 +11,9 @@ const resources = {
   },
   is: {
     translation: translationIS
+  },
+  pl: {
+    translation: translationPL
   }
 };
 
