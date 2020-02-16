@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 import "./JumboTile.scss";
 import { Tile } from "../../models";
@@ -23,6 +24,26 @@ class JumboTile extends Component<Tile> {
     return industry ? <span>{industry}</span> : "";
   }
 
+  get links() {
+    const { links } = this.props;
+    const renderLinks = links =>
+      links.map((link, index) => (
+        <li key={index}>
+          <Link to={link.url}>
+            {link.title}
+            {index}
+          </Link>
+        </li>
+      ));
+
+    return links && links.length ? <ul>{renderLinks(links)}</ul> : "";
+  }
+
+  get actionElement() {
+    const { actionLink } = this.props;
+    return actionLink ? <button>btn</button> : "";
+  }
+
   render() {
     return (
       <section
@@ -35,9 +56,18 @@ class JumboTile extends Component<Tile> {
         {this.iconElement}
 
         {this.titleElement}
+
+        {this.links}
+
+        {this.actionElement}
       </section>
     );
   }
 }
 
 export default JumboTile;
+
+/*
+    const renderLinks = links =>
+      links.map((link,i) => <li key={i}><Link to={link.url}>{link.title}</Link></li>);
+*/
