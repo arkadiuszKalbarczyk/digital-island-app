@@ -3,8 +3,10 @@
   position: relative;
 
   &-container {
+    position: relative;
     margin: 0 auto;
     max-width: 850px;
+    z-index: 1;
   }
 
   &-label {
@@ -19,5 +21,11 @@
     left: 0;
     right: 0;
     bottom: 0;
+  }
+
+  &-country {
+    position: absolute;
+    margin: 0;
+    right: 0;
   }
 }
