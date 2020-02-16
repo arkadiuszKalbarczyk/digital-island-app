@@ -1,3 +1,4 @@
+@import "../../../assets/variables.scss";
 .Jumbotron {
   display: flex;
   flex-wrap: wrap;
@@ -5,4 +6,9 @@
   background-image: url("../../../assets/images/backgroundPick.png");
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+@media screen and (max-width: $tablet-width + 1px) {
+  .Jumbotron {
+  }
 }

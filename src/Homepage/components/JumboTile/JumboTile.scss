@@ -8,3 +8,8 @@
     background-color: $island-blue;
   }
 }
+
+@media screen and (max-width: $tablet-width + 1px) {
+  .JumboTile {
+  }
+}
