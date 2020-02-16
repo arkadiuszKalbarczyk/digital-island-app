@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 
 import "./AdditionalInfo.scss";
 import { AdditionalInformation } from "../../models";
+import WeatherInfo from "../WeatherInfo/WeatherInfo";
+
 interface Props {}
 
 class AdditionalInfo extends Component<Props> {
@@ -21,17 +23,12 @@ class AdditionalInfo extends Component<Props> {
         "The Icelandic Naming committee maintains an official register of approved Icelandic given names and is the governing body of introduction of new given names into the culture of Iceland. Search for Icelandic names",
       linkText: "Search for Icelandic names",
       url: "/"
-    },
-    {
-      title: "Weather",
-      description: "3 / 3",
-      linkText: "weather",
-      url: "/"
     }
   ];
 
   createSection(infoTile: AdditionalInformation, index: number) {
     const { title, description, linkText, url } = infoTile;
+
     return (
       <section className="AdditionalInfo-tile" key={index}>
         <h3>{title}</h3>
@@ -40,10 +37,13 @@ class AdditionalInfo extends Component<Props> {
       </section>
     );
   }
+
   render() {
     return (
       <article className="AdditionalInfo">
         {this.infoTiles.map((tile, i) => this.createSection(tile, i))}
+
+        <WeatherInfo />
       </article>
     );
   }
