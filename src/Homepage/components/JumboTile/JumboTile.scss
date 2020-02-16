@@ -1,0 +1,17 @@
+@import "../../../assets//variables.scss";
+
+.JumboTile {
+  flex: 1 0 33%;
+  height: 50%;
+  position: relative;
+
+  &--filled {
+    background-color: $island-blue;
+    z-index: 1;
+  }
+}
+
+@media screen and (max-width: $tablet-width + 1px) {
+  .JumboTile {
+  }
+}
