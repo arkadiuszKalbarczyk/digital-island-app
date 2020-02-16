@@ -5,6 +5,7 @@ import { TFunction, i18n } from "i18next";
 import LanguageSwitch from "../LanguageSwitch/LanguageSwitch";
 import { RouteLink } from "../../models";
 import "./Navbar.scss";
+import Logo from "../../../assets/icons/logo.png";
 
 interface Props {
   links: RouteLink[];
@@ -27,6 +28,7 @@ class Navigation extends Component<Props> {
 
     return (
       <header className="Navbar">
+        <img src={Logo} alt="Island logo" />
         <section className="Navbar-container">
           <nav>
             <LanguageSwitch i18n={i18n}></LanguageSwitch>
