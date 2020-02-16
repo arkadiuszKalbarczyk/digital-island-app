@@ -1,0 +1,10 @@
+@import "../../../assets//variables.scss";
+
+.JumboTile {
+  flex: 1 0 33%;
+  height: 50%;
+
+  &--filled {
+    background-color: $island-blue;
+  }
+}
