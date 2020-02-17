@@ -27,7 +27,6 @@ function mapWeatherNowObject(weatherNow: WeatherNow): WeatherNow {
   Object.assign(weatherNow.main, tempInCelcius);
 
   delete weatherNow["sys"];
-  delete weatherNow["dt"];
   delete weatherNow["weather"];
   delete weatherNow["clouds"];
 
