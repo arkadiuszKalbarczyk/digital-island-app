@@ -13,7 +13,7 @@ class Jumbotron extends Component<Props> {
   tiles: Tile[] = [
     {
       isFilled: true,
-      industry: "industry",
+      industry: "business & industry",
       icon: progressVector,
       title: "test",
       links: [
@@ -28,7 +28,7 @@ class Jumbotron extends Component<Props> {
     },
     {
       isFilled: true,
-      industry: "industry",
+      industry: "family",
       icon: family,
       title: "test",
       links: [
@@ -43,7 +43,7 @@ class Jumbotron extends Component<Props> {
     },
     {
       isFilled: true,
-      industry: "industry",
+      industry: "finances",
       icon: finances,
       title: "test",
       links: [

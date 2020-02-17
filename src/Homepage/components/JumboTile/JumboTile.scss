@@ -1,6 +1,7 @@
 @import "../../../assets//variables.scss";
 
 .JumboTile {
+  color: white;
   flex: 1 0 33%;
   height: 50%;
   position: relative;
@@ -8,6 +9,18 @@
   &--filled {
     background-color: $island-blue;
     z-index: 1;
+    box-sizing: border-box;
+    padding: 32px;
+  }
+
+  &-industry {
+    display: inline-block;
+  }
+
+  &-icon {
+    position: absolute;
+    right: 32px;
+    top: 32px;
   }
 }
 

@@ -11,7 +11,11 @@ class JumboTile extends Component<Tile> {
 
   get iconElement() {
     const { icon } = this.props;
-    return icon ? <img src={icon} alt="progress icon" /> : "";
+    return icon ? (
+      <img className="JumboTile-icon" src={icon} alt="progress icon" />
+    ) : (
+      ""
+    );
   }
 
   get titleElement() {
@@ -21,7 +25,11 @@ class JumboTile extends Component<Tile> {
 
   get industry() {
     const { industry } = this.props;
-    return industry ? <span>{industry}</span> : "";
+    return industry ? (
+      <span className="JumboTile-industry">{industry}</span>
+    ) : (
+      ""
+    );
   }
 
   get links() {
