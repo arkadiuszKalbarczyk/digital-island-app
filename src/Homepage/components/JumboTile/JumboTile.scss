@@ -10,7 +10,7 @@
     background-color: $island-blue;
     z-index: 1;
     box-sizing: border-box;
-    padding: 32px;
+    padding: 24px;
   }
 
   &-industry {
@@ -19,8 +19,22 @@
 
   &-icon {
     position: absolute;
-    right: 32px;
-    top: 32px;
+    right: 24px;
+    top: 24spx;
+  }
+
+  a {
+    color: #fafafb;
+    text-decoration-line: underline;
+  }
+
+  h3 {
+    margin-top: 32px;
+    margin-right: 72px;
+  }
+
+  ul {
+    padding: 0;
   }
 }
 

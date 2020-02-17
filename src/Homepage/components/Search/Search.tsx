@@ -22,7 +22,9 @@ class Search extends Component<Props> {
           </h2>
         </section>
 
-        <h3 className="Search-popular">Popular on island.is</h3>
+        <h2 className="Search-popular">
+          <span>Popular</span> on island.is
+        </h2>
       </section>
     );
   }
