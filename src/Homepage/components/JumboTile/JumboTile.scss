@@ -32,3 +32,9 @@
     }
   }
 }
+
+@media screen and (max-width: $mobile-width + 1px) {
+  .JumboTile {
+    height: $tile-width--small;
+  }
+}

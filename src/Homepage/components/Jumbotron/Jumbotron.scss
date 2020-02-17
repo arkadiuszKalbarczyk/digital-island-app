@@ -28,6 +28,9 @@
 }
 
 @media screen and (max-width: $mobile-width + 1px) {
+  .Jumbotron {
+    height: 548px;
+  }
 }
 
 .break {
