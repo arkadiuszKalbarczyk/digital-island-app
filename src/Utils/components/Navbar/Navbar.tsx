@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { TFunction, i18n } from "i18next";
+import { i18n } from "i18next";
 
 import LanguageSwitch from "../LanguageSwitch/LanguageSwitch";
 import { RouteLink } from "../../models";
@@ -9,7 +9,6 @@ import Logo from "../../../assets/icons/logo.png";
 
 interface Props {
   links: RouteLink[];
-  t: TFunction;
   i18n: i18n;
 }
 
@@ -23,19 +22,23 @@ class Navigation extends Component<Props> {
   }
 
   render() {
-    const { t, i18n } = this.props;
+    const { i18n } = this.props;
     const LinkElements = this.getLinkElements();
 
     return (
       <header className="Navbar">
-        <img src={Logo} alt="Island logo" />
         <section className="Navbar-container">
-          <nav>
-            <LanguageSwitch i18n={i18n}></LanguageSwitch>
+          <img className="Navbar-icon" src={Logo} alt="Island logo" />
 
+          <nav className="Navbar-links">
             <ul>{LinkElements}</ul>
-            {t("hi")}
           </nav>
+
+          <section className="Navbar-actions">
+            <div>aA</div>
+            <LanguageSwitch i18n={i18n}></LanguageSwitch>
+            <div>My Pages</div>
+          </section>
         </section>
       </header>
     );

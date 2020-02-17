@@ -11,15 +11,18 @@ import { useTranslation } from "react-i18next";
 
 const App = () => {
   const links: RouteLink[] = [
-    { url: "/", title: "home" },
-    { url: "/maternity", title: "maternity" }
+    { url: "/", title: "Start" },
+    { url: "/maternity", title: "Public services" },
+    { url: "/", title: "Health" },
+    { url: "/", title: "Open data" },
+    { url: "/", title: "E-petitions" }
   ];
 
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
 
   return (
     <React.Fragment>
-      <Navbar links={links} t={t} i18n={i18n} />
+      <Navbar links={links} i18n={i18n} />
 
       <main className="App">
         <Switch>

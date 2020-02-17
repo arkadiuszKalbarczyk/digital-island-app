@@ -17,7 +17,7 @@ class WeatherInfo extends Component<Props> {
 
   render() {
     if (!this.state.weather || !this.state.weather.city) {
-      return <section className="WeatherInfo"></section>;
+      return <section className="WeatherInfo">No data</section>;
     }
 
     return (

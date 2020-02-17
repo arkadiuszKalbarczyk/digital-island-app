@@ -1,16 +1,24 @@
+@import "../../../assets//variables.scss";
+
 .Search {
   height: 445px;
   position: relative;
+  display: flex;
 
   &-container {
     position: relative;
     margin: 0 auto;
-    max-width: 850px;
     z-index: 1;
+    padding-top: 70px;
   }
 
   &-label {
     display: inline-block;
+    color: $island-blue;
+
+    &-subheader {
+      font-size: 3rem;
+    }
   }
 
   &-popular {
@@ -21,6 +29,7 @@
     left: 0;
     right: 0;
     bottom: 0;
+    margin-bottom: 32px;
   }
 
   &-country {

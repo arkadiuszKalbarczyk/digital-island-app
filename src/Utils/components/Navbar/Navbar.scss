@@ -4,9 +4,50 @@
   height: 120px;
 
   &-container {
+    position: relative;
     display: flex;
     max-width: $desktop-width;
     margin: 0 auto;
+    justify-content: center;
+  }
+
+  &-icon {
+    position: absolute;
+    left: 0;
+    top: 65px;
+    width: 221px;
+    height: 36px;
+  }
+
+  &-links {
+    margin-top: 65px;
+  }
+
+  &-actions {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    height: 48px;
+  }
+
+  ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+
+    height: 36px;
+    line-height: 60px;
+
+    li {
+      display: inline-block;
+      margin: 0 12px;
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+    }
   }
 }
 
