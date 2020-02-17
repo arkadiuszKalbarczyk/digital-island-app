@@ -8,6 +8,10 @@ export function getWeatherForecastForFiveDays() {
 
 export function getWeatherForNow(): Promise<WeatherAndCity> {
   return getWeatherForecastForFiveDays().then(res => {
+    if (res === null) {
+      return {} as WeatherAndCity;
+    }
+
     return {
       city: res.city as City,
       weatherNow: mapWeatherNowObject(res.list[0])

@@ -11,14 +11,13 @@ class WeatherInfo extends Component<Props> {
 
   componentDidMount() {
     getWeatherForNow().then((res: WeatherAndCity) => {
-      console.log(res);
       this.setState({ weather: res });
     });
   }
 
   render() {
     if (!this.state.weather || !this.state.weather.city) {
-      return <section></section>;
+      return <section className="WeatherInfo"></section>;
     }
 
     return (
