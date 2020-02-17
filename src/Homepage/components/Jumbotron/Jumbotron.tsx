@@ -13,9 +13,11 @@ class Jumbotron extends Component<Props> {
   tiles: Tile[] = [
     {
       isFilled: true,
-      industry: "industry",
+      industry: "business & industry",
       icon: progressVector,
-      title: "test",
+      themeColor: "#00E4CA",
+      title:
+        "I want to <span style='color: #00E4CA'>start trading</span> with my business partners",
       links: [
         { url: "", title: "aax1" },
         { url: "", title: "aax2" },
@@ -28,9 +30,11 @@ class Jumbotron extends Component<Props> {
     },
     {
       isFilled: true,
-      industry: "industry",
+      industry: "family",
       icon: family,
-      title: "test",
+      title:
+        "I want to move to Iceland with my <span style='color: #FFB5CC'>children</span>",
+      themeColor: "#FFB5CC",
       links: [
         { url: "", title: "wax1" },
         { url: "", title: "wax2" },
@@ -43,9 +47,11 @@ class Jumbotron extends Component<Props> {
     },
     {
       isFilled: true,
-      industry: "industry",
+      industry: "finances",
       icon: finances,
-      title: "test",
+      themeColor: "#FFF066",
+      title:
+        "I have to <span style='color: #FFF066'>pay annual taxes</span> and I don’t know how to calculate them",
       links: [
         { url: "", title: "tax1" },
         { url: "", title: "tax2" },
@@ -69,6 +75,7 @@ class Jumbotron extends Component<Props> {
           title={tile.title}
           links={tile.links}
           actionLink={tile.actionLink}
+          themeColor={tile.themeColor}
         />
       );
     });

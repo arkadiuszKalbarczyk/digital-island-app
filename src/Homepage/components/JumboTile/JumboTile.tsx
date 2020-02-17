@@ -11,17 +11,31 @@ class JumboTile extends Component<Tile> {
 
   get iconElement() {
     const { icon } = this.props;
-    return icon ? <img src={icon} alt="progress icon" /> : "";
+    return icon ? (
+      <img className="JumboTile-icon" src={icon} alt="progress icon" />
+    ) : (
+      ""
+    );
   }
 
   get titleElement() {
     const { title } = this.props;
-    return title ? <h3>{title}</h3> : "";
+    return title ? <h3 dangerouslySetInnerHTML={{ __html: title }}></h3> : "";
   }
 
   get industry() {
-    const { industry } = this.props;
-    return industry ? <span>{industry}</span> : "";
+    const { industry, themeColor } = this.props;
+
+    return industry ? (
+      <h4
+        className="JumboTile-industry"
+        style={{ color: themeColor ? themeColor : "inherit" }}
+      >
+        {industry}
+      </h4>
+    ) : (
+      ""
+    );
   }
 
   get links() {
@@ -41,7 +55,7 @@ class JumboTile extends Component<Tile> {
 
   get actionElement() {
     const { actionLink } = this.props;
-    return actionLink ? <button>btn</button> : "";
+    return actionLink ? <button>SEE ALL -></button> : "";
   }
 
   render() {
