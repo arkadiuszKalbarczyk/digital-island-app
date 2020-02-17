@@ -75,7 +75,14 @@ class Jumbotron extends Component<Props> {
   }
 
   render() {
-    return <section className="Jumbotron">{this.renderTiles}</section>;
+    return (
+      <section className="Jumbotron">
+        <section className="Jumbotron-scrollable">
+          {this.renderTiles}
+          <div className="break"></div>
+        </section>
+      </section>
+    );
   }
 }
 

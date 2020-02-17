@@ -13,5 +13,22 @@
 
 @media screen and (max-width: $tablet-width + 1px) {
   .JumboTile {
+    display: none;
+    flex: 0 0 auto;
+    height: 380px;
+
+    &--filled {
+      display: inline-block;
+      width: $tile-width;
+      margin-right: 16px;
+
+      &:first-of-type {
+        margin-left: $space-unit;
+      }
+
+      &:nth-of-type(5) {
+        margin-right: $space-unit;
+      }
+    }
   }
 }
