@@ -1,0 +1,67 @@
+@import "../../../assets//variables.scss";
+
+.JumboTile {
+  color: white;
+  flex: 1 0 33%;
+  height: 50%;
+  position: relative;
+
+  &--filled {
+    background-color: $island-blue;
+    z-index: 1;
+    box-sizing: border-box;
+    padding: 24px;
+  }
+
+  &-industry {
+    display: inline-block;
+  }
+
+  &-icon {
+    position: absolute;
+    right: 24px;
+    top: 24spx;
+  }
+
+  a {
+    color: #fafafb;
+    text-decoration-line: underline;
+  }
+
+  h3 {
+    margin-top: 32px;
+    margin-right: 72px;
+  }
+
+  ul {
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: $tablet-width + 1px) {
+  .JumboTile {
+    display: none;
+    flex: 0 0 auto;
+    height: 380px;
+
+    &--filled {
+      display: inline-block;
+      width: $tile-width;
+      margin-right: 16px;
+
+      &:first-of-type {
+        margin-left: $space-unit;
+      }
+
+      &:nth-of-type(5) {
+        margin-right: $space-unit;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $mobile-width + 1px) {
+  .JumboTile {
+    height: $tile-width--small;
+  }
+}

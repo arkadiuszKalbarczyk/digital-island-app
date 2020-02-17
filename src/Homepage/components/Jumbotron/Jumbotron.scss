@@ -1,0 +1,40 @@
+@import "../../../assets/variables.scss";
+.Jumbotron {
+  position: relative;
+  background-image: url("../../../assets/images/backgroundPick.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 760px;
+
+  &-scrollable {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+  }
+}
+
+@media screen and (max-width: $tablet-width + 1px) {
+  .Jumbotron {
+    padding-bottom: $space-unit;
+
+    &-scrollable {
+      align-items: flex-end;
+      flex-flow: nowrap;
+      overflow-x: scroll;
+      overflow-y: hidden;
+      white-space: nowrap;
+    }
+  }
+}
+
+@media screen and (max-width: $mobile-width + 1px) {
+  .Jumbotron {
+    height: 548px;
+  }
+}
+
+.break {
+  width: 1px;
+  height: 1px;
+  flex: 0 0 auto;
+}
