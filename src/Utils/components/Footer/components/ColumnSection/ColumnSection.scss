@@ -1,3 +1,5 @@
+@import "../../../../../index.scss";
+
 .ColumnSection {
   flex: 1;
 
@@ -14,5 +16,9 @@
     &-container {
       margin: 16px 0;
     }
+  }
+  a {
+    position: relative;
+    @extend .link-animation;
   }
 }
