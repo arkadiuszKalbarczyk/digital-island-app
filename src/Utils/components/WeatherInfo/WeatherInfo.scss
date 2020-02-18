@@ -1,10 +1,21 @@
+@import "../../../assets/variables.scss";
+
 .WeatherInfo {
   &-content {
     margin-top: 1rem;
     display: flex;
     align-items: center;
-    justify-content: center;
     position: relative;
+
+    img {
+      margin-left: -6px;
+      width: 50px;
+    }
+  }
+
+  &-details {
+    display: flex;
+    justify-content: space-between;
   }
 
   &-data {
@@ -13,9 +24,44 @@
   }
 
   &-temp {
-    font-size: 2rem;
+    font-size: 2.5rem;
     &:last-of-type {
       font-weight: 600;
     }
+  }
+}
+@media screen and (max-width: $desktop-small + 1px) {
+  .WeatherInfo-details,
+  .WeatherInfo {
+    padding-top: 24px;
+  }
+  .WeatherInfo-data {
+    flex-direction: row;
+  }
+  .WeatherInfo-data {
+    display: flex;
+  }
+  .WeatherInfo-data > * {
+    flex: 1;
+  }
+}
+
+@media screen and (max-width: $mobile-width + 1px) {
+  .AdditionalInfo-tile {
+    flex: 1;
+  }
+  .AdditionalInfo-tile:not(:first-of-type) {
+    padding-top: 44px;
+  }
+  .WeatherInfo {
+    padding-top: 0;
+  }
+  .WeatherInfo-data,
+  .WeatherInfo-details {
+    padding-top: 0;
+    & > div {
+      padding-top: 24px;
+    }
+    flex-direction: column;
   }
 }

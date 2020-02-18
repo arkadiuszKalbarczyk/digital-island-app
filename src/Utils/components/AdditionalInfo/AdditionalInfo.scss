@@ -3,11 +3,10 @@
 .AdditionalInfo {
   display: flex;
   flex-wrap: wrap;
-  padding: $space-unit;
+  padding: $space-unit-wide $space-unit;
 
   &-tile {
     flex: 0 0 33.3%;
-    text-align: center;
     padding: 0 $space-unit;
     box-sizing: border-box;
 
@@ -24,7 +23,7 @@
   }
 }
 
-@media screen and (max-width: $tablet-width + 1px) {
+@media screen and (max-width: $desktop-small + 1px) {
   .AdditionalInfo {
     &-tile {
       flex: 0 0 50%;
