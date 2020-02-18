@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 import "./Search.scss";
 import IslandLogo from "../../../assets/icons/iceland-map.png";
+import SearchAutosuggest from "./SearchAutosuggest/SearchAutosuggest";
 interface Props {}
 class Search extends Component<Props> {
   render() {
@@ -12,9 +13,9 @@ class Search extends Component<Props> {
         </figure>
 
         <section className="Search-container">
-          <label>
+          <label className="Search-container-label">
             <h1 className="Search-label">Search for</h1>
-            <input type="text" />
+            <SearchAutosuggest />
           </label>
 
           <h2 className="Search-label-subheader">

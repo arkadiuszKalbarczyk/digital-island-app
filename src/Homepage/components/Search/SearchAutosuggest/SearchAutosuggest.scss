@@ -1,0 +1,120 @@
+@import "../../../../assets//variables.scss";
+
+.react-autosuggest__container {
+  position: relative;
+  &:after {
+    content: "⌕";
+    position: absolute;
+    right: 1px;
+    top:1px;
+    height: 52px;
+    width: 52px;
+    border-radius: 4px;
+    background-color: #0061ff;
+  }
+}
+
+.react-autosuggest__input {
+  width: 622px;
+  height: 20px;
+  padding: 16px;
+  font-family: sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  z-index: 1000;
+  margin-left: 10px;
+}
+
+.react-autosuggest__input:focus {
+  outline: none;
+}
+
+.react-autosuggest__container--open .react-autosuggest__input {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.react-autosuggest__suggestions-container {
+  display: none;
+}
+
+.react-autosuggest__container--open .react-autosuggest__suggestions-container {
+  display: block;
+  position: absolute;
+  top: 53px;
+  left: 10px;
+  width: 622px + 32px;
+  border: 1px solid #000;
+  background-color: #fff;
+  font-family: sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  z-index: 1003 !important;
+}
+
+.react-autosuggest__suggestions-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.react-autosuggest__suggestion {
+  cursor: pointer;
+  &:hover {
+    background-color: rgba(0, 0, 60, 0.1);
+  }
+}
+
+.react-autosuggest__suggestion:not(:first-child) .suggestion-content {
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+.react-autosuggest__suggestion .suggestion-content__show_more {
+  &.suggestion-content {
+    text-transform: uppercase;
+    font-weight: 500;
+    border-top: 1px solid rgb(0, 0, 0);
+  }
+  .suggestion.link-color span {
+    color: #0061ff;
+  }
+}
+
+.react-autosuggest__suggestion--focused {
+  background-color: #0c7eaf;
+  color: #fff;
+}
+
+.suggestion-content {
+  display: flex;
+  align-items: center;
+  background-repeat: no-repeat;
+}
+
+.name {
+  line-height: 60px;
+  flex: 1;
+}
+.suggestion-content {
+  margin-left: 16px;
+  margin-right: 16px;
+  &__cta {
+    background-color: #0061ff;
+    text-transform: uppercase;
+    padding: 8px 16px;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 5px;
+  }
+}
+
+.highlight {
+  color: #0061ff;
+}
+
+.react-autosuggest__suggestion--focused .highlight {
+  color: #120000;
+}
