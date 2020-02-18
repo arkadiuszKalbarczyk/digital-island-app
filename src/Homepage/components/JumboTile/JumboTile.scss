@@ -20,7 +20,7 @@
   &-icon {
     position: absolute;
     right: 24px;
-    top: 24spx;
+    top: 24px;
   }
 
   &-button {
@@ -72,8 +72,10 @@
 
   h3 {
     margin-top: 32px;
-    margin-right: 122px;
+    margin-right: 10%;
     margin-bottom: 24px;
+    word-break: break-word;
+    white-space: normal;
   }
 
   ul {
@@ -90,6 +92,7 @@
     display: none;
     flex: 0 0 auto;
     height: 380px;
+    font-size: 0.9rem;
 
     &--filled {
       display: inline-block;
@@ -107,11 +110,29 @@
   }
 }
 
-@media screen and (max-width: $tablet-width + 1px) {
-}
-
 @media screen and (max-width: $mobile-width + 1px) {
   .JumboTile {
-    height: $tile-width--small;
+    height: 370px;
+    font-size: 0.8rem;
+    width: 300px;
+
+    h3 {
+      margin-right: 40px;
+    }
+  }
+}
+
+@media screen and (max-width: $mobile-width--small - 1px) {
+  .JumboTile {
+    width: 260px;
+
+    &-icon {
+      width: 32px;
+      height: 32px;
+    }
+
+    h3 {
+      margin-right: 0;
+    }
   }
 }

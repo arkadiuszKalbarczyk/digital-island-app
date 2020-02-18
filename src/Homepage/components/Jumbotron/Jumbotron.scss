@@ -33,6 +33,12 @@
   }
 }
 
+@media screen and (max-width: $mobile-width--small - 1px) {
+  .Jumbotron {
+    height: 460px;
+  }
+}
+
 .break {
   width: 1px;
   height: 1px;
