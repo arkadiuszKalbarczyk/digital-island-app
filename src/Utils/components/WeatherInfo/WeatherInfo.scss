@@ -1,4 +1,21 @@
 .WeatherInfo {
-  flex: 1;
-  text-align: center;
+  &-content {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  &-data {
+    > section {
+    }
+  }
+
+  &-temp {
+    font-size: 2rem;
+    &:last-of-type {
+      font-weight: 600;
+    }
+  }
 }

@@ -1,9 +1,47 @@
+@import "../../../assets/variables.scss";
+
 .AdditionalInfo {
   display: flex;
+  flex-wrap: wrap;
+  padding: $space-unit;
 
   &-tile {
-    flex: 1;
+    flex: 0 0 33.3%;
     text-align: center;
-    height: 350px;
+    padding: 0 $space-unit;
+    box-sizing: border-box;
+
+    a {
+      color: $island-blue;
+      display: inline-block;
+      text-align: left;
+      width: 100%;
+    }
+  }
+
+  &-text {
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: $tablet-width + 1px) {
+  .AdditionalInfo {
+    &-tile {
+      flex: 0 0 50%;
+    }
+  }
+
+  .weather-tile {
+    flex: 0 0 100%;
+  }
+}
+
+@media screen and (max-width: $mobile-width + 1px) {
+  .weather-tile {
+    flex: 0 0 33%;
+  }
+
+  .AdditionalInfo {
+    flex-flow: column;
   }
 }

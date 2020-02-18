@@ -14,7 +14,8 @@ export function getWeatherForNow(): Promise<WeatherAndCity> {
 
     return {
       city: res.city as City,
-      weatherNow: mapWeatherNowObject(res.list[0])
+      weatherNow: mapWeatherNowObject(res.list[0]),
+      icon: res.list[0].weather[0].icon
     };
   });
 }
@@ -31,7 +32,6 @@ function mapWeatherNowObject(weatherNow: WeatherNow): WeatherNow {
   Object.assign(weatherNow.main, tempInCelcius);
 
   delete weatherNow["sys"];
-  delete weatherNow["weather"];
   delete weatherNow["clouds"];
 
   return weatherNow;
