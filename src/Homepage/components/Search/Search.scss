@@ -49,12 +49,30 @@
     right: 0;
   }
 }
+
 @media screen and (max-width: $tablet-width) {
   .Search {
     padding-left: 24px;
     padding-right: 24px;
     &-container-label {
       display: block;
+    }
+
+    &-label {
+      margin-bottom: 16px;
+    }
+  }
+}
+
+@media screen and (max-width: $mobile-width) {
+  .Search {
+    &-label {
+      font-size: 2rem;
+
+      &-subheader {
+        margin-top: 16px;
+        font-size: 2rem;
+      }
     }
   }
 }
