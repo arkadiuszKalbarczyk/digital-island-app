@@ -18,9 +18,8 @@ class SearchAutosuggest extends Component<
   SearchAutosuggestProps,
   SearchAutosuggestState
 > {
-
-  constructor() {
-    super({});
+  constructor(props) {
+    super(props);
 
     this.state = {
       value: "",
