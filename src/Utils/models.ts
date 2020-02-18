@@ -27,6 +27,7 @@ export interface City {
 export interface WeatherAndCity {
   city: City;
   weatherNow: WeatherNow;
+  icon: string;
 }
 
 export enum LANGS {

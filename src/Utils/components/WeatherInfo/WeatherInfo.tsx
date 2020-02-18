@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./WeatherInfo.scss";
 import { getWeatherForNow } from "./API";
 import { WeatherAndCity } from "../../models";
+import { weatherEndpoint } from "../../consts";
 
 interface Props {}
 class WeatherInfo extends Component<Props> {
@@ -22,20 +23,32 @@ class WeatherInfo extends Component<Props> {
 
     return (
       <section className="WeatherInfo">
-        <h3>Weather : {this.state.weather.city.name}</h3>
+        <h2>Weather : {this.state.weather.city.name}</h2>
+        <article className="WeatherInfo-data">
+          <section className="WeatherInfo-content">
+            <img src={`${weatherEndpoint}${this.state.weather.icon}.png`} />
+            <span className="WeatherInfo-temp">
+              {this.state.weather.weatherNow.main.temp_min} {"\u00b0"} /
+            </span>
 
-        <section>
-          <span>{this.state.weather.weatherNow.main.temp_min}</span>/
-          <span>{this.state.weather.weatherNow.main.temp_max}</span>
-        </section>
+            <span className="WeatherInfo-temp">
+              {this.state.weather.weatherNow.main.temp_max} {"\u00b0"}{" "}
+            </span>
+          </section>
 
-        <section>wind: {this.state.weather.weatherNow.wind.speed}</section>
+          <section>
+            wind: {this.state.weather.weatherNow.wind.speed} km/h
+          </section>
 
-        <section>
-          humidity: {this.state.weather.weatherNow.main.humidity}
-        </section>
+          <section>
+            humidity: {this.state.weather.weatherNow.main.humidity} %
+          </section>
 
-        <section>time: {this.state.weather.weatherNow.dt_txt}</section>
+          <section>
+            time: {new Date(this.state.weather.weatherNow.dt_txt).getHours()} :
+            00
+          </section>
+        </article>
       </section>
     );
   }

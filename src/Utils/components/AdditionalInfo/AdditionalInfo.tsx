@@ -20,8 +20,8 @@ class AdditionalInfo extends Component<Props> {
     {
       title: "Did you know",
       description:
-        "The Icelandic Naming committee maintains an official register of approved Icelandic given names and is the governing body of introduction of new given names into the culture of Iceland. Search for Icelandic names",
-      linkText: "Search for Icelandic names",
+        "The Icelandic Naming committee maintains an official register of approved Icelandic given names and is the governing body of introduction of new given names into the culture of Iceland.",
+      linkText: "SEARCH FOR ICELANDING NAMES",
       url: "/"
     }
   ];
@@ -31,8 +31,8 @@ class AdditionalInfo extends Component<Props> {
 
     return (
       <section className="AdditionalInfo-tile" key={index}>
-        <h3>{title}</h3>
-        <p>{description}</p>
+        <h2>{title}</h2>
+        <p className="AdditionalInfo-text">{description}</p>
         <Link to={url}>{linkText}</Link>
       </section>
     );
@@ -43,7 +43,10 @@ class AdditionalInfo extends Component<Props> {
       <article className="AdditionalInfo">
         {this.infoTiles.map((tile, i) => this.createSection(tile, i))}
 
-        <WeatherInfo />
+        {/* <div className="break-flex "></div> */}
+        <section className="AdditionalInfo-tile weather-tile">
+          <WeatherInfo />
+        </section>
       </article>
     );
   }
