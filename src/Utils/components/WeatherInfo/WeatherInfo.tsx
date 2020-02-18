@@ -23,30 +23,38 @@ class WeatherInfo extends Component<Props> {
 
     return (
       <section className="WeatherInfo">
-        <h2>Weather : {this.state.weather.city.name}</h2>
+        <h2>
+          Weather: <strong>{this.state.weather.city.name}</strong>
+        </h2>
         <article className="WeatherInfo-data">
           <section className="WeatherInfo-content">
-            <img src={`${weatherEndpoint}${this.state.weather.icon}.png`} />
+            <img src={`${weatherEndpoint}${this.state.weather.icon}@2x.png`} />
             <span className="WeatherInfo-temp">
-              {this.state.weather.weatherNow.main.temp_min} {"\u00b0"} /
+              {this.state.weather.weatherNow.main.temp_min} {"\u00b0"} / &nbsp;
             </span>
 
             <span className="WeatherInfo-temp">
               {this.state.weather.weatherNow.main.temp_max} {"\u00b0"}{" "}
             </span>
           </section>
-
-          <section>
-            wind: {this.state.weather.weatherNow.wind.speed} km/h
-          </section>
-
-          <section>
-            humidity: {this.state.weather.weatherNow.main.humidity} %
-          </section>
-
-          <section>
-            time: {new Date(this.state.weather.weatherNow.dt_txt).getHours()} :
-            00
+          <section className="WeatherInfo-details">
+            <div>
+              <section>
+                wind:{" "}
+                <strong>{this.state.weather.weatherNow.wind.speed} km/h</strong>
+              </section>
+              <section>
+                humidity:{" "}
+                <strong>{this.state.weather.weatherNow.main.humidity} %</strong>
+              </section>
+              <section>
+                time:{" "}
+                <strong>
+                  {new Date(this.state.weather.weatherNow.dt_txt).getHours()}
+                  :00
+                </strong>
+              </section>
+            </div>
           </section>
         </article>
       </section>
