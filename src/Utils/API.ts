@@ -1,4 +1,5 @@
 import axios from "axios";
+import i18n from "./../i18n";
 
 const baseURL = process.env.REACT_APP_BASE_URL;
 if (!baseURL) {
@@ -7,5 +8,8 @@ if (!baseURL) {
 
 export default axios.create({
   baseURL,
-  responseType: "json"
+  responseType: "json",
+  headers: {
+    lang: i18n.language
+  }
 });
