@@ -40,6 +40,22 @@ class SearchAutosuggest extends Component<
     {
       title: "Families",
       module: "aKing"
+    },
+    {
+      title: "Families",
+      module: "aKing"
+    },
+    {
+      title: "Families",
+      module: "aKsing"
+    },
+    {
+      title: "Families",
+      module: "aKifng"
+    },
+    {
+      title: "Families",
+      module: "aKiacng"
     }
   ];
 
@@ -56,9 +72,20 @@ class SearchAutosuggest extends Component<
 
     const regex = new RegExp("\\b" + escapedValue, "i");
 
-    return this.people.filter(person =>
+    let results = this.people.filter(person =>
       regex.test(this.getSuggestionValue(person))
     );
+
+    if (results.length > 3) {
+      // Get top 5 results and push 'show all'
+      const filteredResults = results.filter((_, i) => i <= 3);
+      filteredResults.push({
+        title: `Show all (${results.length}) results`,
+        module: `search`
+      });
+      return filteredResults;
+    }
+    return results;
   }
 
   getSuggestionValue(suggestion) {
@@ -70,7 +97,7 @@ class SearchAutosuggest extends Component<
     const matches = AutosuggestHighlightMatch(suggestionText, query);
     const parts = AutosuggestHighlightParse(suggestionText, matches);
 
-    return (
+    return suggestion.module !== "search" ? (
       <span className="suggestion-content">
         <span className="name">
           {parts.map((part, index) => {
@@ -90,6 +117,14 @@ class SearchAutosuggest extends Component<
         ) : (
           ""
         )}
+      </span>
+    ) : (
+      <span className="suggestion-content suggestion-content__show_more">
+        <span className="name">
+          <span className="suggestion link-color">
+            <span>{suggestion.title}</span>
+          </span>
+        </span>
       </span>
     );
   }
