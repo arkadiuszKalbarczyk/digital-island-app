@@ -3,6 +3,10 @@ import Autosuggest from "react-autosuggest";
 import AutosuggestHighlightMatch from "autosuggest-highlight/match";
 import AutosuggestHighlightParse from "autosuggest-highlight/parse";
 
+import ComponentDto from "./dto/ComponentDto";
+
+import { quickSearch } from "./API";
+
 import "./SearchAutosuggest.scss";
 interface SearchAutosuggestProps {}
 interface SearchAutosuggestState {
@@ -14,6 +18,7 @@ class SearchAutosuggest extends Component<
   SearchAutosuggestProps,
   SearchAutosuggestState
 > {
+
   constructor() {
     super({});
 
@@ -23,88 +28,29 @@ class SearchAutosuggest extends Component<
     };
   }
 
-  people = [
-    {
-      title: "Maternity",
-      module: "aBrown"
-    },
-    {
-      title: "Working permits",
-      module: "aWhite",
-      cta: "List of forms"
-    },
-    {
-      title: "Taxes",
-      module: "aJones"
-    },
-    {
-      title: "Families",
-      module: "aKing"
-    },
-    {
-      title: "Families",
-      module: "aKing"
-    },
-    {
-      title: "Families",
-      module: "aKsing"
-    },
-    {
-      title: "Families",
-      module: "aKifng"
-    },
-    {
-      title: "Families",
-      module: "aKiacng"
-    }
-  ];
+  results: ComponentDto[] = [];
 
   escapeRegexCharacters(str) {
     return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
   }
 
-  getSuggestions(value) {
-    const escapedValue = this.escapeRegexCharacters(value.trim());
-
-    if (escapedValue === "") {
-      return [];
-    }
-
-    const regex = new RegExp("\\b" + escapedValue, "i");
-
-    let results = this.people.filter(person =>
-      regex.test(this.getSuggestionValue(person))
-    );
-
-    if (results.length > 3) {
-      // Get top 5 results and push 'show all'
-      const filteredResults = results.filter((_, i) => i <= 3);
-      filteredResults.push({
-        title: `Show all (${results.length}) results`,
-        module: `search`
-      });
-      return filteredResults;
-    }
-    return results;
-  }
-
   getSuggestionValue(suggestion) {
-    return `${suggestion.title} ${suggestion.module}`;
+    return `${suggestion.title} ${suggestion.component}`;
   }
 
   renderSuggestion(suggestion, { query }) {
-    const suggestionText = `${suggestion.title} ${suggestion.module}`;
+    const suggestionText = suggestion.title;
     const matches = AutosuggestHighlightMatch(suggestionText, query);
     const parts = AutosuggestHighlightParse(suggestionText, matches);
 
-    return suggestion.module !== "search" ? (
+    return suggestion.component !== "_search" ? (
       <span className="suggestion-content">
         <span className="name">
           {parts.map((part, index) => {
             const className = part.highlight ? "highlight" : undefined;
 
             return (
-              <span className="suggestion">
+              <span className="suggestion" key={index}>
                 <span className={className} key={index}>
                   {part.text}
                 </span>
@@ -136,8 +82,18 @@ class SearchAutosuggest extends Component<
   };
 
   onSuggestionsFetchRequested = ({ value }) => {
-    this.setState({
-      suggestions: this.getSuggestions(value)
+    const escapedValue = this.escapeRegexCharacters(value.trim());
+
+    if (escapedValue === "" || escapedValue.length < 3) {
+      this.setState({
+        suggestions: []
+      });
+      return;
+    }
+    return quickSearch(value).then(response => {
+      this.setState({
+        suggestions: response
+      });
     });
   };
 
