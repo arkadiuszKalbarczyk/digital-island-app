@@ -1,2 +1,37 @@
 .InfoAccordion {
+  &-header {
+    font-weight: 600;
+    font-size: 22px;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    > div {
+      outline: none;
+      position: relative;
+
+      &[aria-expanded="true"] {
+        .InfoAccordion-icon-container {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+
+  &-icon {
+    height: 24px;
+    width: 24px;
+
+    &-container {
+      transition: transform 100ms ease;
+      position: absolute;
+      top: 3px;
+      right: 0;
+      height: 24px;
+      width: 24px;
+      margin: 0;
+      display: inline-block;
+    }
+  }
 }

@@ -8,6 +8,7 @@ import {
   AccordionItemPanel
 } from "react-accessible-accordion";
 import { FooterSection, RouteLink } from "../../models";
+import Arrow from "../../../assets/icons/arrow.png";
 
 interface Props {
   sections: FooterSection[];
@@ -29,8 +30,17 @@ class InfoAccordion extends Component<Props> {
     return sections.map((section, index) => {
       return (
         <AccordionItem key={index}>
-          <AccordionItemHeading>
-            <AccordionItemButton>{section.title}</AccordionItemButton>
+          <AccordionItemHeading className="InfoAccordion-header">
+            <AccordionItemButton>
+              {section.title}
+              <figure className="InfoAccordion-icon-container">
+                <img
+                  className="InfoAccordion-icon"
+                  src={Arrow}
+                  alt="arrow icon"
+                />
+              </figure>
+            </AccordionItemButton>
           </AccordionItemHeading>
 
           {this.createAccordionItemPanels(section.links)}
