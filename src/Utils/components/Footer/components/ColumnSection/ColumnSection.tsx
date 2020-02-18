@@ -12,7 +12,7 @@ class ColumnSection extends Component<Props> {
   createLinks(links: RouteLink[]) {
     return links.map((link, index) => {
       return (
-        <li key={index}>
+        <li className="ColumnSection-link-container" key={index}>
           {link.url ? (
             <Link to={link.url} className="ColumnSection-link">
               {link.title}
