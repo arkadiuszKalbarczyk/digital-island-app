@@ -4,6 +4,7 @@ import "./Footer.scss";
 import ColumnSection from "./components/ColumnSection/ColumnSection";
 import ColumnCoatOfArms from "./components/ColumnCoatOfArms/ColumnCoatOfArms";
 import ColumnSectionSlider from "./components/ColumnSectionSlider/ColumnSectionSlider";
+import InfoAccordion from "../InfoAccordion/InfoAccordion";
 
 interface Props {}
 
@@ -34,3 +35,10 @@ class Footer extends Component<Props> {
 }
 
 export default Footer;
+
+/**
+ * 
+        <article>
+          <InfoAccordion />
+        </article>
+ */
