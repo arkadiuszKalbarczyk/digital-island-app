@@ -19,9 +19,9 @@ class Jumbotron extends Component<Props> {
       title:
         "I want to <span style='color: #00E4CA'>start trading</span> with my business partners",
       links: [
-        { url: "", title: "aax1" },
-        { url: "", title: "aax2" },
-        { url: "", title: "aax3" }
+        { url: "", title: "Limited liability company (ltd)" },
+        { url: "", title: "Collective wage agreements" },
+        { url: "", title: "Security net" }
       ],
       actionLink: "/"
     },
@@ -36,9 +36,9 @@ class Jumbotron extends Component<Props> {
         "I want to move to Iceland with my <span style='color: #FFB5CC'>children</span>",
       themeColor: "#FFB5CC",
       links: [
-        { url: "", title: "wax1" },
-        { url: "", title: "wax2" },
-        { url: "", title: "wax3" }
+        { url: "", title: "Maternity/paternity leave and parental leave" },
+        { url: "", title: "Nursery schools" },
+        { url: "", title: "Child benefits" }
       ],
       actionLink: "/"
     },
@@ -53,9 +53,9 @@ class Jumbotron extends Component<Props> {
       title:
         "I have to <span style='color: #FFF066'>pay annual taxes</span> and I don’t know how to calculate them",
       links: [
-        { url: "", title: "tax1" },
-        { url: "", title: "tax2" },
-        { url: "", title: "tax3" }
+        { url: "", title: "Taxes on goods and services" },
+        { url: "", title: "Personal taxes" },
+        { url: "", title: "Child benefits" }
       ],
       actionLink: "/"
     },

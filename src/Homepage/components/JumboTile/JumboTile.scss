@@ -23,22 +23,69 @@
     top: 24spx;
   }
 
+  &-button {
+    position: absolute;
+    bottom: $space-unit;
+    border: none;
+    background: none;
+    color: inherit;
+    cursor: pointer;
+    outline: inherit;
+    padding: 0;
+    font-weight: 600;
+    font-size: 1rem;
+
+    .arrow-icon {
+      height: 20px;
+      width: 20px;
+      position: relative;
+      top: 3px;
+      left: 4px;
+    }
+  }
+
   a {
     color: #fafafb;
-    text-decoration-line: underline;
+    position: relative;
+  }
+
+  a,
+  &-button {
+    &:after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 1px;
+      display: block;
+      right: 0;
+      background: #fff;
+      transition: width 0.1s ease;
+      -webkit-transition: width 0.1s ease;
+    }
+
+    &:hover:after {
+      width: 100%;
+      left: 0;
+      background: #fff;
+    }
   }
 
   h3 {
     margin-top: 32px;
-    margin-right: 72px;
+    margin-right: 122px;
+    margin-bottom: 24px;
   }
 
   ul {
     padding: 0;
+
+    li {
+      margin: 1rem 0;
+    }
   }
 }
 
-@media screen and (max-width: $tablet-width + 1px) {
+@media screen and (max-width: $desktop-small + 1px) {
   .JumboTile {
     display: none;
     flex: 0 0 auto;
@@ -58,6 +105,9 @@
       }
     }
   }
+}
+
+@media screen and (max-width: $tablet-width + 1px) {
 }
 
 @media screen and (max-width: $mobile-width + 1px) {

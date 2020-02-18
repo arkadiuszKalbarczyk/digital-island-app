@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 import "./JumboTile.scss";
 import { Tile } from "../../models";
+import BackArrow from "../../../assets/icons/back-arrow.png";
 
 class JumboTile extends Component<Tile> {
   isFilled() {
@@ -43,10 +44,7 @@ class JumboTile extends Component<Tile> {
     const renderLinks = links =>
       links.map((link, index) => (
         <li key={index}>
-          <Link to={link.url}>
-            {link.title}
-            {index}
-          </Link>
+          <Link to={link.url}>{link.title}</Link>
         </li>
       ));
 
@@ -55,7 +53,13 @@ class JumboTile extends Component<Tile> {
 
   get actionElement() {
     const { actionLink } = this.props;
-    return actionLink ? <button>SEE ALL -></button> : "";
+    return actionLink ? (
+      <button className="JumboTile-button">
+        SEE ALL <img className="arrow-icon" src={BackArrow} alt="back arrow" />
+      </button>
+    ) : (
+      ""
+    );
   }
 
   render() {
