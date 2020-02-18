@@ -2,24 +2,37 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 import "./ColumnSection.scss";
+import { FooterSection, RouteLink } from "../../../../models";
 
 interface Props {
-  title: string;
+  section: FooterSection;
 }
 
 class ColumnSection extends Component<Props> {
+  createLinks(links: RouteLink[]) {
+    return links.map((link, index) => {
+      return (
+        <li key={index}>
+          {link.url ? (
+            <Link to={link.url} className="ColumnSection-link">
+              {link.title}
+            </Link>
+          ) : (
+            link.title
+          )}
+        </li>
+      );
+    });
+  }
+
   render() {
-    const { title } = this.props;
+    const { section } = this.props;
 
     return (
       <section className="ColumnSection">
-        <h3>{title}</h3>
+        <h3>{section.title}</h3>
         <ul className="ColumnSection-container">
-          <li>
-            <Link to="/" className="ColumnSection-link">
-              temp
-            </Link>
-          </li>
+          {this.createLinks(section.links)}
         </ul>
       </section>
     );

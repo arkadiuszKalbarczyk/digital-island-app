@@ -7,33 +7,40 @@ import {
   AccordionItemHeading,
   AccordionItemPanel
 } from "react-accessible-accordion";
+import { FooterSection, RouteLink } from "../../models";
 
-interface Props {}
+interface Props {
+  sections: FooterSection[];
+}
 
 class InfoAccordion extends Component<Props> {
+  createAccordionItemPanels(links: RouteLink[]) {
+    return links.map((link, index) => {
+      return (
+        <AccordionItemPanel key={index}>
+          <p>{link.title}</p>
+        </AccordionItemPanel>
+      );
+    });
+  }
   createAccordionItem() {
-    return (
-      <Accordion>
-        <AccordionItem>
+    const { sections } = this.props;
+
+    return sections.map((section, index) => {
+      return (
+        <AccordionItem key={index}>
           <AccordionItemHeading>
-            <AccordionItemButton>
-              What harsh truths do you prefer to ignore?
-            </AccordionItemButton>
+            <AccordionItemButton>{section.title}</AccordionItemButton>
           </AccordionItemHeading>
-          <AccordionItemPanel>
-            <p>
-              Exercitation in fugiat est ut ad ea cupidatat ut in cupidatat
-              occaecat ut occaecat consequat est minim minim esse tempor laborum
-              consequat esse adipisicing eu reprehenderit enim.
-            </p>
-          </AccordionItemPanel>
+
+          {this.createAccordionItemPanels(section.links)}
         </AccordionItem>
-      </Accordion>
-    );
+      );
+    });
   }
 
   render() {
-    return <div>{this.createAccordionItem()}</div>;
+    return <Accordion>{this.createAccordionItem()}</Accordion>;
   }
 }
 

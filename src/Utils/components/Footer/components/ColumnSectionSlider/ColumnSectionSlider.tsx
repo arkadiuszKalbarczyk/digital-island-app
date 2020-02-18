@@ -1,17 +1,18 @@
 import React, { Component } from "react";
-
+import InfoAccordion from "../../../InfoAccordion/InfoAccordion";
+import { FooterSection } from "../../../../models";
 interface Props {
-  title: string;
+  sections: FooterSection[];
 }
 
 class ColumnSectionSlider extends Component<Props> {
   render() {
-    const { title } = this.props;
+    const { sections } = this.props;
 
     return (
-      <section className="ColumnSection">
-        <h3>{title} \/</h3>
-      </section>
+      <article>
+        <InfoAccordion sections={sections} />
+      </article>
     );
   }
 }
