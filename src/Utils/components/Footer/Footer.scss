@@ -3,7 +3,7 @@
 .Footer {
   background-color: $primary-color;
   color: white;
-  padding: 0 $space-unit;
+  padding: 2.5 * $space-unit $space-unit;
 
   &-container {
     display: flex;
@@ -19,7 +19,6 @@
   &-coat {
     flex: 1;
     margin: 0;
-    margin-top: 56px;
   }
 
   &-mobile {
