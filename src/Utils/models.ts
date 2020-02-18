@@ -1,5 +1,5 @@
 export interface RouteLink {
-  url: string;
+  url?: string;
   title: string;
 }
 
@@ -33,4 +33,9 @@ export enum LANGS {
   pl = "pl",
   en = "en",
   is = "is"
+}
+
+export interface FooterSection {
+  title: string;
+  links: RouteLink[];
 }

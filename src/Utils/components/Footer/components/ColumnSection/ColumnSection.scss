@@ -1,12 +1,24 @@
+@import "../../../../../index.scss";
+
 .ColumnSection {
   flex: 1;
 
   &-container {
+    margin-top: 24px;
     list-style: none;
+    padding: 0;
   }
 
   &-link {
     color: inherit;
     text-decoration: inherit;
+
+    &-container {
+      margin: 16px 0;
+    }
+  }
+  a {
+    position: relative;
+    @extend .link-animation;
   }
 }

@@ -1,9 +1,9 @@
 @import "../../../assets/variables.scss";
 
 .Footer {
-  height: 575px;
   background-color: $primary-color;
   color: white;
+  padding: 2.5 * $space-unit $space-unit;
 
   &-container {
     display: flex;
@@ -31,6 +31,7 @@
     &-container {
       flex-flow: column;
     }
+    padding: 2 * $space-unit $space-unit;
   }
 }
 

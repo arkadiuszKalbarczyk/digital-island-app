@@ -46,3 +46,22 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.link-animation {
+  &:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 1px;
+    display: block;
+    right: 0;
+    background: #fff;
+    transition: width 0.1s ease;
+  }
+
+  &:hover:after {
+    width: 100%;
+    left: 0;
+    background: #fff;
+  }
+}

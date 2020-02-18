@@ -54,7 +54,7 @@ class JumboTile extends Component<Tile> {
   get actionElement() {
     const { actionLink } = this.props;
     return actionLink ? (
-      <button className="JumboTile-button">
+      <button className="JumboTile-button link-animation">
         SEE ALL <img className="arrow-icon" src={BackArrow} alt="back arrow" />
       </button>
     ) : (
