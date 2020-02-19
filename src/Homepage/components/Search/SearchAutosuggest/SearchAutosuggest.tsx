@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Redirect } from "react-router-dom";
 import Autosuggest from "react-autosuggest";
 import AutosuggestHighlightMatch from "autosuggest-highlight/match";
 import AutosuggestHighlightParse from "autosuggest-highlight/parse";
@@ -7,8 +8,10 @@ import ComponentDto from "./dto/ComponentDto";
 
 import { quickSearch } from "./API";
 import { TFunction } from "i18next";
-
 import "./SearchAutosuggest.scss";
+
+declare const location;
+
 interface SearchAutosuggestProps {
   t: TFunction;
 }
@@ -36,8 +39,14 @@ class SearchAutosuggest extends Component<
     return str.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
   }
 
-  getSuggestionValue(suggestion) {
-    return `${suggestion.title} ${suggestion.component}`;
+  getSuggestionValue(suggestion: ComponentDto) {
+    console.log("getSuggestionValue");
+    location.href += suggestion.component;
+    return `${suggestion.title}`;
+  }
+
+  suggestionSelected(suggestion: ComponentDto) {
+    return <Redirect to={suggestion.component} />;
   }
 
   renderSuggestion(suggestion, { query }) {
@@ -78,6 +87,7 @@ class SearchAutosuggest extends Component<
   }
 
   onChange = (event, { newValue, method }) => {
+    console.log("onChange");
     this.setState({
       value: newValue
     });

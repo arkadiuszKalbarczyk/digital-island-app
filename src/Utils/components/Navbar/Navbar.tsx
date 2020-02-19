@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { i18n } from "i18next";
+import { Link } from "react-router-dom";
 
 import LanguageSwitch from "../LanguageSwitch/LanguageSwitch";
 import { NavElement } from "../../models";
@@ -20,8 +21,9 @@ class Navigation extends Component<Props> {
     return (
       <header className="Navbar">
         <section className="Navbar-container">
-          <img className="Navbar-icon" src={Logo} alt="Island logo" />
-
+          <Link to={"/"}>
+            <img className="Navbar-icon" src={Logo} alt="Island logo" />
+          </Link>
           <nav className="Navbar-links">
             <Dropdown navElements={this.props.navElements} />
           </nav>

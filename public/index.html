@@ -7,8 +7,120 @@
     <meta name="theme-color" content="#000000" />
     <meta
       name="description"
-      content="Web site created using create-react-app"
+      content="Web site created for demonstration purposes"
     />
+    <style>
+      .island-loader-grid {
+        display: inline-block;
+        position: relative;
+        width: 80px;
+        height: 80px;
+        left: calc(50vw - 130px);
+        top: calc(70vh - 32px);
+        width: 260px;
+      }
+      .island-loader-grid div {
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        animation: island-loader-grid 1.2s linear infinite;
+      }
+      .island-loader-grid div.row1 {
+        background: rgb(0, 97, 255);
+        background: linear-gradient(
+          125deg,
+          rgba(0, 97, 255, 1) 0%,
+          rgba(255, 0, 80, 1) 500%
+        );
+      }
+      .island-loader-grid div.row2 {
+        background: rgb(0, 97, 255);
+        background: linear-gradient(
+          125deg,
+          rgba(0, 97, 255, 1) -100%,
+          rgba(255, 0, 80, 1) 400%
+        );
+      }
+      .island-loader-grid div.row3 {
+        background: rgb(0, 97, 255);
+        background: linear-gradient(
+          125deg,
+          rgba(0, 97, 255, 1) -200%,
+          rgba(255, 0, 80, 1) 300%
+        );
+      }
+      .island-loader-grid div.row4 {
+        background: rgb(0, 97, 255);
+        background: linear-gradient(
+          125deg,
+          rgba(0, 97, 255, 1) -300%,
+          rgba(255, 0, 80, 1) 200%
+        );
+      }
+      .island-loader-grid div.row5 {
+        background: rgb(0, 97, 255);
+        background: linear-gradient(
+          125deg,
+          rgba(0, 97, 255, 1) -400%,
+          rgba(255, 0, 80, 1) 100%
+        );
+      }
+      .island-loader-grid div:nth-child(1) {
+        top: 8px;
+        left: 8px;
+        animation-delay: 0s;
+      }
+      .island-loader-grid div:nth-child(2) {
+        top: 8px;
+        left: 32px;
+        animation-delay: -0.7s;
+      }
+      .island-loader-grid div:nth-child(3) {
+        top: 8px;
+        left: 56px;
+        animation-delay: -0.5s;
+      }
+      .island-loader-grid div:nth-child(4) {
+        top: 32px;
+        left: 8px;
+        animation-delay: -1.3s;
+      }
+      .island-loader-grid div:nth-child(5) {
+        top: 32px;
+        left: 32px;
+        animation-delay: -0.2s;
+      }
+      .island-loader-grid div:nth-child(6) {
+        top: 32px;
+        left: 56px;
+        animation-delay: -1.2s;
+      }
+      .island-loader-grid div:nth-child(7) {
+        top: 56px;
+        left: 8px;
+        animation-delay: -0.4s;
+      }
+      .island-loader-grid div:nth-child(8) {
+        top: 56px;
+        left: 32px;
+        animation-delay: -1s;
+      }
+      .island-loader-grid div:nth-child(9) {
+        top: 56px;
+        left: 56px;
+        animation-delay: -1.4s;
+      }
+      @keyframes island-loader-grid {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.5;
+        }
+      }
+    </style>
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
@@ -28,9 +140,42 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>Ísland.is</title>
   </head>
   <body>
+    <div
+      id="loader"
+      style="position: fixed;
+      opacity: 1;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 999999;
+    transition: opacity 0.3s ease;
+    background-color: white;"
+    >
+      <div class="island-loader-grid">
+        <div class="row1"></div>
+        <div class="row2"></div>
+        <div class="row3"></div>
+        <div class="row2"></div>
+        <div class="row3"></div>
+        <div class="row4"></div>
+        <div class="row3"></div>
+        <div class="row4"></div>
+        <div class="row5"></div>
+        <img
+          style="
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 180px;
+            margin-bottom: 8px;"
+          src="%PUBLIC_URL%/logo-2.png"
+        />
+      </div>
+    </div>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <!--
@@ -43,5 +188,17 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script>
+      window.onload = function() {
+        document.getElementById("loader").style.opacity = 0;
+        setTimeout(function() {
+          document.getElementById("loader").style.display = "none";
+        }, 300);
+      };
+      window.addEventListener("hashchange", function() {
+        document.getElementById("loader").style.display = "block";
+        document.getElementById("loader").style.opacity = 1;
+      });
+    </script>
   </body>
 </html>

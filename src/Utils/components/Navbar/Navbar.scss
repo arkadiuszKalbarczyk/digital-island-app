@@ -11,15 +11,16 @@
     margin: 0 auto;
     justify-content: space-between;
     align-items: flex-end;
+    & > a {
+      margin-bottom: 16px;
+    }
   }
-
   &-icon {
     // position: absolute;
     // left: 0;
     // top: 65px;
     width: 221px;
     height: 36px;
-    margin-bottom: 20px;
   }
 
   &--small-font {
