@@ -1,6 +1,6 @@
 @import "../../../assets/variables.scss";
 
-.Dropdown-test {
+.Dropdown {
   position: relative;
   z-index: 10;
   #menu ul {
@@ -60,11 +60,12 @@
   }
 
   #menu {
-    background-color: #0061FF;
+    background-color: #0061ff;
   }
 
   #toggle-menu {
-    background: #00003C;
+    background: #fff;
+    border: 0;
   }
 
   #toggle-menu,
@@ -107,7 +108,7 @@
     color: rgba(255, 255, 255, 0.75);
   }
 
-  @media only screen and (min-width: 1024px) {
+  @media only screen and (min-width: $desktop-small) {
     #menu .main-menu {
       display: block;
     }
@@ -164,5 +165,33 @@
     #menu li:hover > input[type="checkbox"] + .sub-menu {
       display: block;
     }
+  }
+  .ham-bar {
+    width: 35px;
+    height: 5px;
+    background-color: $island-blue;
+    margin: 6px 0;
+    border-radius: 2px;
+    margin-bottom: 4px;
+  }
+}
+
+@media screen and (max-width: 1150px + 1px) {
+  .Dropdown {
+    #toggle-menu,
+    #menu a {
+      padding: 0.8em 1em;
+    }
+    #toggle-menu{
+      margin-bottom: 4px;
+    }
+  }
+
+}
+
+@media screen and (max-width: $mobile-width) {
+  .Dropdown .ham-bar{
+    width: 30px;
+    height: 4px;
   }
 }
