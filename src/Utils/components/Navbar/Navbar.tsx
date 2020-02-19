@@ -6,7 +6,7 @@ import LanguageSwitch from "../LanguageSwitch/LanguageSwitch";
 import { RouteLink } from "../../models";
 import "./Navbar.scss";
 import Logo from "../../../assets/icons/logo.png";
-
+import Dropdown from "../Dropdown/Dropdown";
 interface Props {
   links: RouteLink[];
   i18n: i18n;
@@ -31,7 +31,7 @@ class Navigation extends Component<Props> {
           <img className="Navbar-icon" src={Logo} alt="Island logo" />
 
           <nav className="Navbar-links">
-            <ul>{LinkElements}</ul>
+            <Dropdown />
           </nav>
 
           <section className="Navbar-actions">
@@ -45,3 +45,5 @@ class Navigation extends Component<Props> {
   }
 }
 export default Navigation;
+
+//         {/* <ul>{LinkElements}</ul> */}
