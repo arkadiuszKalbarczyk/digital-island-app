@@ -32,19 +32,19 @@
     height: 48px;
   }
 
-  ul {
-    display: flex;
-    list-style: none;
-    margin: 0;
+  // ul {
+  //   display: flex;
+  //   list-style: none;
+  //   margin: 0;
 
-    height: 36px;
-    line-height: 60px;
+  //   height: 36px;
+  //   line-height: 60px;
 
-    li {
-      display: inline-block;
-      margin: 0 12px;
-    }
-  }
+  //   li {
+  //     display: inline-block;
+  //     margin: 0 12px;
+  //   }
+  // }
 }
 
 @media screen and (max-width: $tablet-width + 1px) {
