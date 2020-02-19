@@ -10,8 +10,8 @@ class LanguageSwitch extends Component<Props> {
     // TODO: refactor to map over langs
     return (
       <select onChange={event => i18n.changeLanguage(event.target.value)}>
-        <option value="is">IS</option>
         <option value="en">EN</option>
+        <option value="is">IS</option>
         <option value="pl">PL</option>
       </select>
     );

@@ -1,1 +1,6 @@
-{ "hi": "PL:hi!" }
+{
+  "search": "Wyszukaj",
+  "officialServices": "oficjalnych usług i informacji <br/> rządowych Islandii",
+  "popular": "<span>Popularne</span> w island.is",
+  "searchPlaceholder": "np: rodzina, pozwolenia na pracę, podatki"
+}
