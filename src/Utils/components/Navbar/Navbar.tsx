@@ -5,6 +5,8 @@ import LanguageSwitch from "../LanguageSwitch/LanguageSwitch";
 import { NavElement } from "../../models";
 import "./Navbar.scss";
 import Logo from "../../../assets/icons/logo.png";
+import Eye from "../../../assets/icons/eye.png";
+import Lock from "../../../assets/icons/lock.png";
 import Dropdown from "../Dropdown/Dropdown";
 interface Props {
   navElements: NavElement[];
@@ -25,9 +27,15 @@ class Navigation extends Component<Props> {
           </nav>
 
           <section className="Navbar-actions">
-            <div>aA</div>
+            <div>
+              <img src={Eye} alt="Font size change eye" />
+              <span className="Navbar--small-font">A</span>A
+            </div>
             <LanguageSwitch i18n={i18n}></LanguageSwitch>
-            <div>My Pages</div>
+            <div>
+              <img src={Lock} alt="My pages lock" />
+              My Pages
+            </div>
           </section>
         </section>
       </header>

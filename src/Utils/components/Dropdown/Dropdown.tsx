@@ -20,7 +20,7 @@ class Dropdown extends Component<Props> {
     return navLinks.map((subLink, i) => {
       return (
         <li key={i}>
-          <a href="">
+          <a href="#">
             {subLink.title}
             <label title="Toggle Drop-down" className="drop-icon" htmlFor="sm4">
               ▾
@@ -50,10 +50,14 @@ class Dropdown extends Component<Props> {
   }
   render() {
     return (
-      <div className="Dropdown-test">
+      <div className="Dropdown">
         <nav id="menu">
           <label htmlFor="tm" id="toggle-menu">
-            Navigation <span className="drop-icon">▾</span>
+            <div>
+              <div className="ham-bar"></div>  
+              <div className="ham-bar"></div>  
+              <div className="ham-bar"></div>  
+            </div>
           </label>
           <input type="checkbox" id="tm" />
           <ul className="main-menu cf">{this.renderLinkHeaders()}</ul>

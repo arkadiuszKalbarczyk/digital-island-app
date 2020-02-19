@@ -9,15 +9,21 @@
     display: flex;
     max-width: $desktop-width;
     margin: 0 auto;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: flex-end;
   }
 
   &-icon {
-    position: absolute;
-    left: 0;
-    top: 65px;
+    // position: absolute;
+    // left: 0;
+    // top: 65px;
     width: 221px;
     height: 36px;
+    margin-bottom: 20px;
+  }
+
+  &--small-font {
+    font-size: 0.7rem;
   }
 
   &-links {
@@ -27,9 +33,19 @@
   &-actions {
     display: flex;
     align-items: center;
-    position: absolute;
+    // position: absolute;
     right: 0;
     height: 48px;
+    align-self: start;
+    & > * {
+      margin-left: 8px;
+      margin-right: 8px;
+      display: flex;
+      align-items: center;
+      & > img {
+        margin-right: 8px;
+      }
+    }
   }
 
   // ul {
@@ -47,8 +63,38 @@
   // }
 }
 
-@media screen and (max-width: $tablet-width + 1px) {
+@media screen and (max-width: $desktop-small) {
+  .Navbar{
+    vertical-align: middle;
+    &-container{
+      height: 100%
+    }
+    &-icon{
+      
+    }
+    &-links{
+      margin-top: 0;
+    }
+    &-actions{
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+}
+
+@media screen and (max-width: $tablet-width) {
+  .Navbar-actions{
+    display: none;
+  }
+  .Navbar{
+    height: 80px;
+  }
 }
 
 @media screen and (max-width: $mobile-width +1px) {
+  .Navbar-icon{
+    width: 120px;
+    height: auto;
+  }
 }
