@@ -60,11 +60,11 @@
   }
 
   #menu {
-    background-color: #09c;
+    background-color: #0061FF;
   }
 
   #toggle-menu {
-    background: #333;
+    background: #00003C;
   }
 
   #toggle-menu,
@@ -83,6 +83,7 @@
 
   #menu .sub-menu {
     display: none;
+    border-radius: 5px;
   }
 
   #menu input[type="checkbox"]:checked + .sub-menu {
@@ -122,7 +123,7 @@
 
     #menu li {
       float: left;
-      border-width: 0 1px 0 0;
+      border-width: 0;
     }
 
     #menu .sub-menu li {

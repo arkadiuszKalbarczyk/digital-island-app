@@ -18,7 +18,7 @@ const App = () => {
     {
       navLinks: [
         {
-          title: "linkCont2",
+          title: "Business & industry",
           links: [
             { title: "link2", url: "/" },
             { title: "link222", url: "/" },
@@ -26,12 +26,98 @@ const App = () => {
           ]
         },
         {
-          title: "linkCont2deep",
+          title: "Consumer issues",
           links: [{ title: "link2", url: "/" }]
         },
         {
-          title: "linkCont222deep",
-          links: [{ title: "link2", url: "/" }, { title: "link222", url: "/" }]
+          title: "Disabled",
+          links: [
+            { title: "link2", url: "/" },
+            { title: "link222", url: "/" }
+          ]
+        },
+        {
+          title: "Education & Society",
+          links: [
+            { title: "link2", url: "/" },
+            { title: "link222", url: "/" }
+          ]
+        },
+        {
+          title: "Family",
+          links: [
+            { title: "All types of families", url: "/" },
+            { title: "Children and youth", url: "/" },
+            { title: "Day-care Centres", url: "/" },
+            { title: "End of life", url: "/" },
+            { title: "Having a baby", url: "/" },
+            { title: "Adoption", url: "/" },
+            { title: "Child benefits", url: "/" },
+            { title: "Considerations during pregnancy", url: "/" },
+            { title: "Infertility/artificial insemination", url: "/" },
+            { title: "Maternity/paternity leave and parental leave", url: "/maternity" },
+            { title: "Name giving", url: "/" },
+            { title: "Paternity", url: "/" },
+            { title: "Pregnancy and childbirth", url: "/" },
+            { title: "Students with children", url: "/" },
+            { title: "Marriage and partners", url: "/" },
+          ]
+        },
+        {
+          title: "Finance",
+          links: [
+            { title: "link2", url: "/" },
+            { title: "link222", url: "/" }
+          ]
+        },
+        {
+          title: "Health",
+          links: [
+            { title: "link2", url: "/" },
+            { title: "link222", url: "/" }
+          ]
+        },
+        {
+          title: "Finance",
+          links: [
+            { title: "link2", url: "/" },
+            { title: "link222", url: "/" }
+          ]
+        },
+        {
+          title: "Health",
+          links: [
+            { title: "link2", url: "/" },
+            { title: "link222", url: "/" }
+          ]
+        },
+        {
+          title: "Homes & housing",
+          links: [
+            { title: "link2", url: "/" },
+            { title: "link222", url: "/" }
+          ]
+        },
+        {
+          title: "Immigrants",
+          links: [
+            { title: "link2", url: "/" },
+            { title: "link222", url: "/" }
+          ]
+        },
+        {
+          title: "Senior years",
+          links: [
+            { title: "link2", url: "/" },
+            { title: "link222", url: "/" }
+          ]
+        },
+        {
+          title: "Travel & transport",
+          links: [
+            { title: "link2", url: "/" },
+            { title: "link222", url: "/" }
+          ]
         }
       ],
       title: "Public services"
