@@ -40,3 +40,12 @@ export interface FooterSection {
   title: string;
   links: RouteLink[];
 }
+
+export interface NavLink {
+  title: string;
+  links: RouteLink[];
+}
+export interface NavElement {
+  title: string;
+  navLinks: NavLink[];
+}

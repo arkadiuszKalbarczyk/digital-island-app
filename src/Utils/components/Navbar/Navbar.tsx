@@ -1,29 +1,19 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import { i18n } from "i18next";
 
 import LanguageSwitch from "../LanguageSwitch/LanguageSwitch";
-import { RouteLink } from "../../models";
+import { NavElement } from "../../models";
 import "./Navbar.scss";
 import Logo from "../../../assets/icons/logo.png";
 import Dropdown from "../Dropdown/Dropdown";
 interface Props {
-  links: RouteLink[];
+  navElements: NavElement[];
   i18n: i18n;
 }
 
 class Navigation extends Component<Props> {
-  getLinkElements() {
-    return this.props.links.map((link, index) => (
-      <li key={index}>
-        <Link to={link.url}>{link.title}</Link>
-      </li>
-    ));
-  }
-
   render() {
     const { i18n } = this.props;
-    const LinkElements = this.getLinkElements();
 
     return (
       <header className="Navbar">
@@ -31,7 +21,7 @@ class Navigation extends Component<Props> {
           <img className="Navbar-icon" src={Logo} alt="Island logo" />
 
           <nav className="Navbar-links">
-            <Dropdown />
+            <Dropdown navElements={this.props.navElements} />
           </nav>
 
           <section className="Navbar-actions">
@@ -45,5 +35,3 @@ class Navigation extends Component<Props> {
   }
 }
 export default Navigation;
-
-//         {/* <ul>{LinkElements}</ul> */}
