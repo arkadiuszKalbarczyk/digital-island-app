@@ -6,9 +6,12 @@ import AutosuggestHighlightParse from "autosuggest-highlight/parse";
 import ComponentDto from "./dto/ComponentDto";
 
 import { quickSearch } from "./API";
+import { TFunction } from "i18next";
 
 import "./SearchAutosuggest.scss";
-interface SearchAutosuggestProps {}
+interface SearchAutosuggestProps {
+  t: TFunction;
+}
 interface SearchAutosuggestState {
   value;
   suggestions;
@@ -103,9 +106,10 @@ class SearchAutosuggest extends Component<
   };
 
   render() {
+    const { t } = this.props;
     const { value, suggestions } = this.state;
     const inputProps = {
-      placeholder: "f.i. families, working permits, taxes",
+      placeholder: t("searchPlaceholder"),
       value,
       onChange: this.onChange
     };

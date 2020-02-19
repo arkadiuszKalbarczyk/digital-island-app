@@ -1,1 +1,6 @@
-{ "hi": "IS:hi!" }
+{
+  "search": "Leita",
+  "officialServices": "opinber þjónusta ríkisins og <br/> upplýsingar um Ísland",
+  "popular": "<span>Sent</span> á island.is",
+  "searchPlaceholder": "t.d. fjölskyldu, atvinnuleyfi, skatta"
+}

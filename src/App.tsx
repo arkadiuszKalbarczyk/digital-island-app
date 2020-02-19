@@ -10,6 +10,8 @@ import { NavElement } from "./Utils/models";
 import { useTranslation } from "react-i18next";
 
 const App = () => {
+  const { i18n, t } = useTranslation();
+
   const navElements: NavElement[] = [
     {
       navLinks: [{ title: "linkCont", links: [{ title: "link", url: "/" }] }],
@@ -49,8 +51,6 @@ const App = () => {
       title: "E-petitions"
     }
   ];
-
-  const { i18n } = useTranslation();
 
   return (
     <React.Fragment>
