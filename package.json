@@ -11,6 +11,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "cypress:open": "cypress open",
     "postinstall": "react-scripts build"
   },
   "eslintConfig": {
@@ -32,14 +33,15 @@
     ]
   },
   "devDependencies": {
-    "dotenv": "^8.2.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.0",
     "@testing-library/user-event": "^7.2.1",
     "@types/jest": "^24.9.1",
     "@types/node": "^12.12.27",
     "@types/react": "^16.9.19",
-    "@types/react-dom": "^16.9.5"
+    "@types/react-dom": "^16.9.5",
+    "cypress": "^4.0.2",
+    "dotenv": "^8.2.0"
   },
   "dependencies": {
     "autosuggest-highlight": "^3.1.1",
