@@ -1,8 +1,6 @@
 ### `npm install`
 Downloads all dependencies and stores them in node_modules
 
-### Create ".env" file next to "/src" catalogue
-Add necessary env variables to .env file, consult team members
 ### `configure local environment`
 
 Create .env file and populate it with required variables such as 'REACT_APP_BASE_URL'
