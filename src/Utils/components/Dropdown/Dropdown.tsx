@@ -20,12 +20,12 @@ class Dropdown extends Component<Props> {
     return navLinks.map((subLink, i) => {
       return (
         <li key={i}>
-          <a href="#">
-            {subLink.title}
+          <Link to={"/"}>
+            {subLink.title}{" "}
             <label title="Toggle Drop-down" className="drop-icon" htmlFor="sm4">
               ▾
             </label>
-          </a>
+          </Link>
           <input type="checkbox" id="sm4" />
           <ul className="sub-menu">{this.renderLinks(subLink.links)}</ul>
         </li>
@@ -36,12 +36,12 @@ class Dropdown extends Component<Props> {
     return this.props.navElements.map((el, i) => {
       return (
         <li key={i}>
-          <a href="#" className="title">
+          <Link className="title" to={"/"}>
             {el.title}
-            <label title="Toggle Drop-down" className="drop-icon" htmlFor="sm3">
+            <label title="Toggle Drop-down" className="drop-icon" htmlFor="sm4">
               ▾
             </label>
-          </a>
+          </Link>
           <input type="checkbox" id="sm3" />
           <ul className="sub-menu">{this.renderSubLinks(el.navLinks)}</ul>
         </li>
@@ -54,9 +54,9 @@ class Dropdown extends Component<Props> {
         <nav id="menu">
           <label htmlFor="tm" id="toggle-menu">
             <div>
-              <div className="ham-bar"></div>  
-              <div className="ham-bar"></div>  
-              <div className="ham-bar"></div>  
+              <div className="ham-bar"></div>
+              <div className="ham-bar"></div>
+              <div className="ham-bar"></div>
             </div>
           </label>
           <input type="checkbox" id="tm" />

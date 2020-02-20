@@ -9,8 +9,20 @@ import MaternityHome from "./MaternityHome/MaternityHome";
 import { NavElement } from "./Utils/models";
 import { useTranslation } from "react-i18next";
 
+import { useQuery } from "@apollo/react-hooks";
+import { GET_SEARCH_RESULTS } from "./Homepage/components/Search/query";
+
 const App = () => {
-  const { i18n, t } = useTranslation();
+  const { i18n } = useTranslation();
+
+  // APOLLO GRAPHQL REQUEST
+
+  const { data } = useQuery(GET_SEARCH_RESULTS, {
+    variables: { lang: "en", phrase: "Mat" }
+  });
+
+  console.log("POC graphql request with Apollo: ", data);
+  // APOLLO GRAPHQL REQUEST
 
   const navElements: NavElement[] = [
     {
@@ -33,17 +45,11 @@ const App = () => {
         },
         {
           title: "Disabled",
-          links: [
-            { title: "link2", url: "/" },
-            { title: "link222", url: "/" }
-          ]
+          links: [{ title: "link2", url: "/" }, { title: "link222", url: "/" }]
         },
         {
           title: "Education & Society",
-          links: [
-            { title: "link2", url: "/" },
-            { title: "link222", url: "/" }
-          ]
+          links: [{ title: "link2", url: "/" }, { title: "link222", url: "/" }]
         },
         {
           title: "Family",
@@ -57,69 +63,48 @@ const App = () => {
             { title: "Child benefits", url: "/" },
             { title: "Considerations during pregnancy", url: "/" },
             { title: "Infertility/artificial insemination", url: "/" },
-            { title: "Maternity/paternity leave and parental leave", url: "/maternity" },
+            {
+              title: "Maternity/paternity leave and parental leave",
+              url: "/maternity"
+            },
             { title: "Name giving", url: "/" },
             { title: "Paternity", url: "/" },
             { title: "Pregnancy and childbirth", url: "/" },
             { title: "Students with children", url: "/" },
-            { title: "Marriage and partners", url: "/" },
+            { title: "Marriage and partners", url: "/" }
           ]
         },
         {
           title: "Finance",
-          links: [
-            { title: "link2", url: "/" },
-            { title: "link222", url: "/" }
-          ]
+          links: [{ title: "link2", url: "/" }, { title: "link222", url: "/" }]
         },
         {
           title: "Health",
-          links: [
-            { title: "link2", url: "/" },
-            { title: "link222", url: "/" }
-          ]
+          links: [{ title: "link2", url: "/" }, { title: "link222", url: "/" }]
         },
         {
           title: "Finance",
-          links: [
-            { title: "link2", url: "/" },
-            { title: "link222", url: "/" }
-          ]
+          links: [{ title: "link2", url: "/" }, { title: "link222", url: "/" }]
         },
         {
           title: "Health",
-          links: [
-            { title: "link2", url: "/" },
-            { title: "link222", url: "/" }
-          ]
+          links: [{ title: "link2", url: "/" }, { title: "link222", url: "/" }]
         },
         {
           title: "Homes & housing",
-          links: [
-            { title: "link2", url: "/" },
-            { title: "link222", url: "/" }
-          ]
+          links: [{ title: "link2", url: "/" }, { title: "link222", url: "/" }]
         },
         {
           title: "Immigrants",
-          links: [
-            { title: "link2", url: "/" },
-            { title: "link222", url: "/" }
-          ]
+          links: [{ title: "link2", url: "/" }, { title: "link222", url: "/" }]
         },
         {
           title: "Senior years",
-          links: [
-            { title: "link2", url: "/" },
-            { title: "link222", url: "/" }
-          ]
+          links: [{ title: "link2", url: "/" }, { title: "link222", url: "/" }]
         },
         {
           title: "Travel & transport",
-          links: [
-            { title: "link2", url: "/" },
-            { title: "link222", url: "/" }
-          ]
+          links: [{ title: "link2", url: "/" }, { title: "link222", url: "/" }]
         }
       ],
       title: "Public services"
