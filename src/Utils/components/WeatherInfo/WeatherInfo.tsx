@@ -28,7 +28,10 @@ class WeatherInfo extends Component<Props> {
         </h2>
         <article className="WeatherInfo-data">
           <section className="WeatherInfo-content">
-            <img src={`${weatherEndpoint}${this.state.weather.icon}@2x.png`} />
+            <img
+              src={`${weatherEndpoint}${this.state.weather.icon}@2x.png`}
+              alt="weather  icon"
+            />
             <span className="WeatherInfo-temp">
               {this.state.weather.weatherNow.main.temp_min} {"\u00b0"} / &nbsp;
             </span>
