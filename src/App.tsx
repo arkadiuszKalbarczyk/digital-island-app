@@ -9,8 +9,20 @@ import MaternityHome from "./MaternityHome/MaternityHome";
 import { NavElement } from "./Utils/models";
 import { useTranslation } from "react-i18next";
 
+import { useQuery } from "@apollo/react-hooks";
+import { GET_SEARCH_RESULTS } from "./Homepage/components/Search/query";
+
 const App = () => {
   const { i18n } = useTranslation();
+
+  // APOLLO GRAPHQL REQUEST
+
+  const { data } = useQuery(GET_SEARCH_RESULTS, {
+    variables: { lang: "en", phrase: "Mat" }
+  });
+
+  console.log(data);
+  // APOLLO GRAPHQL REQUEST
 
   const navElements: NavElement[] = [
     {
