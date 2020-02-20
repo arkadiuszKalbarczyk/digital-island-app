@@ -21,7 +21,7 @@ const App = () => {
     variables: { lang: "en", phrase: "Mat" }
   });
 
-  console.log(data);
+  console.log("POC graphql request with Apollo: ", data);
   // APOLLO GRAPHQL REQUEST
 
   const navElements: NavElement[] = [
