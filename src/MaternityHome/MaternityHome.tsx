@@ -18,7 +18,7 @@ const MaternityHome = () => {
           </p>
 
           <h1 className="Article-subject">
-            <img src={Eye} />
+            <img src={Eye} alt="article logo" />
             Maternity/paternity leave and parental leave
           </h1>
           <h3 className="Article-subtitle">
@@ -29,7 +29,7 @@ const MaternityHome = () => {
           </h3>
           <section className="Article-text-section">
             <div className="Article-text-share">
-              <img src={MediaShare} />
+              <img src={MediaShare} alt="media icon" />
             </div>
             <section>
               <section className="Article-section">
@@ -193,7 +193,7 @@ const MaternityHome = () => {
           </section>
         </article>
         <section className="MaternityHome-sidebar">
-          <img src={MaternitySidebar} />
+          <img src={MaternitySidebar} alt="media sidebar" />
         </section>
       </section>
       <section className="MaternityHome__subfooter">
@@ -205,7 +205,9 @@ const MaternityHome = () => {
               Child benefits are intended to assist parents with their children
               and to equalise their situations...
             </p>
-            <Link to={"#"}><b>SEE MORE</b></Link>
+            <Link to={"#"}>
+              <b>SEE MORE</b>
+            </Link>
           </section>
           <section>
             <h3>Daycare in private homes</h3>
@@ -213,7 +215,9 @@ const MaternityHome = () => {
               When maternity/paternity leave ends and the parents return to the
               labour market or begin studying, they need to find...
             </p>
-            <Link to={"#"}><b>SEE MORE</b></Link>
+            <Link to={"#"}>
+              <b>SEE MORE</b>
+            </Link>
           </section>
           <section>
             <h3>Healthcare</h3>
@@ -221,12 +225,16 @@ const MaternityHome = () => {
               Healthcare services cover any form of healthcare, health controls,
               clinical analyses, medical treatment, nursing...
             </p>
-            <Link to={"#"}><b>SEE MORE</b></Link>
+            <Link to={"#"}>
+              <b>SEE MORE</b>
+            </Link>
           </section>
           <section>
             <h3>Paternity</h3>
             <p>By law, a child is entitled to know both parents...</p>
-            <Link to={"#"}><b>SEE MORE</b></Link>
+            <Link to={"#"}>
+              <b>SEE MORE</b>
+            </Link>
           </section>
         </div>
       </section>
