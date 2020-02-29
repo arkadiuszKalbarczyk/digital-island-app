@@ -7,6 +7,7 @@ interface Props {
   navElements: NavElement[];
 }
 class Dropdown extends Component<Props> {
+  collapsed = false;
   renderLinks(links: RouteLink[]) {
     return links.map((l, i) => {
       return (
@@ -22,11 +23,15 @@ class Dropdown extends Component<Props> {
         <li key={i}>
           <Link to={"/"}>
             {subLink.title}{" "}
-            <label title="Toggle Drop-down" className="drop-icon" htmlFor="sm4">
+            <label
+              title="Toggle Drop-down"
+              className="drop-icon"
+              htmlFor={"sm" + i}
+            >
               ▾
             </label>
           </Link>
-          <input type="checkbox" id="sm4" />
+          <input type="checkbox" id={"sm" + i} />
           <ul className="sub-menu">{this.renderLinks(subLink.links)}</ul>
         </li>
       );
@@ -38,19 +43,36 @@ class Dropdown extends Component<Props> {
         <li key={i}>
           <Link className="title" to={"/"}>
             {el.title}
-            <label title="Toggle Drop-down" className="drop-icon" htmlFor="sm4">
+            <label
+              title="Toggle Drop-down"
+              className="drop-icon"
+              htmlFor={"lh" + i}
+            >
               ▾
             </label>
           </Link>
-          <input type="checkbox" id="sm3" />
+          <input type="checkbox" id={"lh" + i} />
           <ul className="sub-menu">{this.renderSubLinks(el.navLinks)}</ul>
         </li>
       );
     });
   }
+  changeActiveStatus(e) {
+    e.preventDefault();
+    document.getElementsByClassName("Dropdown")[0].className =
+      document
+        .getElementsByClassName("Dropdown")[0]
+        .className.indexOf("collapsed") > -1
+        ? "Dropdown"
+        : "Dropdown collapsed";
+  }
+  prevent(e) {
+    e.preventDefault();
+    e.stopPropagation();
+  }
   render() {
     return (
-      <div className="Dropdown">
+      <div className="Dropdown" onClick={this.changeActiveStatus}>
         <nav id="menu">
           <label htmlFor="tm" id="toggle-menu">
             <div>
@@ -60,7 +82,9 @@ class Dropdown extends Component<Props> {
             </div>
           </label>
           <input type="checkbox" id="tm" />
-          <ul className="main-menu cf">{this.renderLinkHeaders()}</ul>
+          <ul className="main-menu cf" onClick={this.prevent}>
+            {this.renderLinkHeaders()}
+          </ul>
         </nav>
       </div>
     );
