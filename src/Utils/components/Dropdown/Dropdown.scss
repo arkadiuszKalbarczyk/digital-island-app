@@ -60,7 +60,7 @@
   }
 
   #menu {
-    background-color: #0061ff;
+    background-color: white;
   }
 
   #toggle-menu {
@@ -88,7 +88,7 @@
   }
 
   #menu input[type="checkbox"]:checked + .sub-menu {
-    display: block;
+    display: block !important;
   }
 
   #toggle-menu .drop-icon,
@@ -103,9 +103,19 @@
     padding: 1em;
     font-size: 1em;
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.125);
+    // background-color: rgba(0, 0, 0, 0.125);
     text-shadow: 0 0 0 transparent;
-    color: rgba(255, 255, 255, 0.75);
+    // color: rgba(255, 255, 255, 0.75);
+    color: black;
+  }
+
+  &.collapsed {
+    position: absolute;
+    left: 0;
+    width: 100%;
+  }
+  &.collapsed > nav > ul {
+    display: block !important;
   }
 
   @media only screen and (min-width: $desktop-small) {
@@ -182,15 +192,14 @@
     #menu a {
       padding: 0.8em 1em;
     }
-    #toggle-menu{
+    #toggle-menu {
       margin-bottom: 4px;
     }
   }
-
 }
 
 @media screen and (max-width: $mobile-width) {
-  .Dropdown .ham-bar{
+  .Dropdown .ham-bar {
     width: 30px;
     height: 4px;
   }
