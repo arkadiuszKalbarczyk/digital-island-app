@@ -60,7 +60,7 @@
   }
 
   #menu {
-    background-color: #0061ff;
+    background-color: white;
   }
 
   #toggle-menu {
@@ -103,9 +103,10 @@
     padding: 1em;
     font-size: 1em;
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.125);
+    // background-color: rgba(0, 0, 0, 0.125);
     text-shadow: 0 0 0 transparent;
-    color: rgba(255, 255, 255, 0.75);
+    // color: rgba(255, 255, 255, 0.75);
+    color: black;
   }
 
   &.collapsed {
